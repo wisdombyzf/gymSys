@@ -1,10 +1,10 @@
-import cn.cxyzf.PlayerEntity;
+import entity.PlayerEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-public class test
+public class test1
 {
     public static void main(String []args)
     {
@@ -14,7 +14,7 @@ public class test
         Transaction transaction=session.beginTransaction();
 
         PlayerEntity playerEntity=new PlayerEntity();
-        playerEntity.setPlayerId("1324553");
+        playerEntity.setPlayerId("14553");
         playerEntity.setName("测试341");
         session.save(playerEntity);
         //playerEntity=session.get(PlayerEntity.class,"13323");

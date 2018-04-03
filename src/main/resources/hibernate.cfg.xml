@@ -29,7 +29,7 @@
 
 
     <!-- 映射 -->
-    <mapping class="cn.cxyzf.PlayerEntity"></mapping>
+    <mapping class="entity.PlayerEntity"></mapping>
 
   </session-factory>
 </hibernate-configuration>

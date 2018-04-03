@@ -1,4 +1,4 @@
-package cn.cxyzf;
+package entity;
 
 import javax.persistence.*;
 
