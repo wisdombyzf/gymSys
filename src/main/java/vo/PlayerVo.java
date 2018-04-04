@@ -1,7 +1,5 @@
 package vo;
 
-import entity.PlayerEntity;
-
 public class PlayerVo
 {
     private String playerId;

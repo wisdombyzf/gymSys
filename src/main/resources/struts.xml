@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<!-- 原来idea 只编译resources文件夹下的配置文件。。。。难怪编译好的xml文件没有更新-->
+<struts>
+    <package name="default" namespace="/" extends="struts-default">
+        <action name="login" class="action.LoginAction">
+            <result name="success">/success.jsp</result>
+        </action>
+
+        <action name="admin_lo*" class="action.AdminAction" method="login">
+            <result name="fail">/fail.jsp</result>
+            <result name="success">/success.jsp</result>
+        </action>
+        <action name="admin_addTeam" class="action.AdminAction" method="AddTeam">
+            <result name="fail">/fail.jsp</result>
+            <result name="success">/success.jsp</result>
+        </action>
+    </package>
+</struts>

@@ -2,33 +2,31 @@ package action;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class LoginAction extends ActionSupport {
+//TODO 密码还是明文传输
+/**
+ *  管理员登陆
+ */
+public class LoginAction extends BaseAction
+{
 
     private String username;
     private String password;
 
+
     @Override
-    public String execute() throws Exception {
-        if (username.equals("admin") && password.equals("123")) {
-            return SUCCESS;
-        } else {
-            return LOGIN;
-        }
+    public String execute() throws Exception
+    {
+        return "fail";
     }
 
-    public String getUsername() {
-        return username;
-    }
 
-    public void setUsername(String username) {
+    public void setUsername(String username)
+    {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
+    public void setPassword(String password)
+    {
         this.password = password;
     }
 }

@@ -17,7 +17,7 @@
       <facet type="Struts2" name="Struts 2">
         <configuration>
           <fileset id="s2fileset" name="Default File Set " removed="false">
-            <file>file://$MODULE_DIR$/src/main/java/struts.xml</file>
+            <file>file://$MODULE_DIR$/src/main/resources/struts.xml</file>
             <file>jar://D:/StrutsStart/lib/struts2-core-2.5.13.jar!/struts-default.xml</file>
           </fileset>
           <propertiesKeys disabled="false" />
@@ -65,5 +65,6 @@
     <orderEntry type="library" name="Maven: org.jboss.spec.javax.interceptor:jboss-interceptors-api_1.1_spec:1.0.0.Beta1" level="project" />
     <orderEntry type="library" name="Maven: javax.annotation:jsr250-api:1.0" level="project" />
     <orderEntry type="library" name="Maven: javax.inject:javax.inject:1" level="project" />
+    <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:4.0.0-b01" level="project" />
   </component>
 </module>

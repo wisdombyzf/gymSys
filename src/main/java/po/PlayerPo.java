@@ -1,10 +1,10 @@
-package entity;
+package po;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "player", schema = "gaysys", catalog = "")
-public class PlayerEntity
+public class PlayerPo
 {
     private String playerId;
     private Integer age;
@@ -91,14 +91,14 @@ public class PlayerEntity
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        PlayerEntity that = (PlayerEntity) o;
+        PlayerPo playerPo = (PlayerPo) o;
 
-        if (playerId != null ? !playerId.equals(that.playerId) : that.playerId != null) return false;
-        if (age != null ? !age.equals(that.age) : that.age != null) return false;
-        if (event != null ? !event.equals(that.event) : that.event != null) return false;
-        if (idCard != null ? !idCard.equals(that.idCard) : that.idCard != null) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (teamName != null ? !teamName.equals(that.teamName) : that.teamName != null) return false;
+        if (playerId != null ? !playerId.equals(playerPo.playerId) : playerPo.playerId != null) return false;
+        if (age != null ? !age.equals(playerPo.age) : playerPo.age != null) return false;
+        if (event != null ? !event.equals(playerPo.event) : playerPo.event != null) return false;
+        if (idCard != null ? !idCard.equals(playerPo.idCard) : playerPo.idCard != null) return false;
+        if (name != null ? !name.equals(playerPo.name) : playerPo.name != null) return false;
+        if (teamName != null ? !teamName.equals(playerPo.teamName) : playerPo.teamName != null) return false;
 
         return true;
     }
