@@ -10,6 +10,7 @@ public class GlobematchrulePo
     private Integer playerPerMatch;
     private Integer playerCountInGroupScore;
 
+    @Basic
     @Id
     @Column(name = "TeamPlayerPerGroup", nullable = false)
     public int getTeamPlayerPerGroup()
@@ -22,6 +23,7 @@ public class GlobematchrulePo
         this.teamPlayerPerGroup = teamPlayerPerGroup;
     }
 
+    @Basic
     @Id
     @Column(name = "PlayerPerMatch", nullable = true)
     public Integer getPlayerPerMatch()
@@ -34,6 +36,7 @@ public class GlobematchrulePo
         this.playerPerMatch = playerPerMatch;
     }
 
+    @Basic
     @Id
     @Column(name = "PlayerCountInGroupScore", nullable = true)
     public Integer getPlayerCountInGroupScore()

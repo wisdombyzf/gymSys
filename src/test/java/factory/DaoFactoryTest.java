@@ -26,7 +26,7 @@ public class DaoFactoryTest
     {
         PlayerDao playerDao= DaoFactory.getPlayerDao();
         PlayerPo playerPo=new PlayerPo();
-        playerPo.setPlayerId("131422");
+        playerPo.setPlayerId("1331422");
         playerPo.setName("小明");
         playerPo.setAge(77);
         playerPo.setIdCard("44443242");

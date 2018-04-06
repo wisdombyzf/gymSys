@@ -1,7 +1,9 @@
 package vo;
 
 
-public class TeamVo
+import java.io.Serializable;
+
+public class TeamVo implements Serializable
 {
     private String teamName;
     private String teamAccount;

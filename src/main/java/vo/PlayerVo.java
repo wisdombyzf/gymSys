@@ -1,6 +1,8 @@
 package vo;
 
-public class PlayerVo
+import java.io.Serializable;
+
+public class PlayerVo implements Serializable
 {
     private String playerId;
     private Integer age;

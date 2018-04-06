@@ -1,10 +1,11 @@
 package po;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "player", schema = "gaysys", catalog = "")
-public class PlayerPo
+public class PlayerPo implements Serializable
 {
     private String playerId;
     private Integer age;

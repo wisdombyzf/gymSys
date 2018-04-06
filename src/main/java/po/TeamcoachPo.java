@@ -12,6 +12,7 @@ public class TeamcoachPo
     private String gender;
     private String teamName;
 
+    @Basic
     @Id
     @Column(name = "ID", nullable = true, length = 255)
     public String getId()
