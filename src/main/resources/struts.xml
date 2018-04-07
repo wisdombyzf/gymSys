@@ -31,6 +31,9 @@
         <action name="get_player" class="action.GetJSON" method="getAllPlayer">
             <result name="fail">/fail.jsp</result>
         </action>
+        <action name="upload" class="action.UploadAction" method="upload">
+
+        </action>
     </package>
 
 
