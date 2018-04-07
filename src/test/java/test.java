@@ -17,6 +17,7 @@ public class test
     {
         test2 t2=new test2();
         Object object=t2.test21(Class.forName("String"));
+
     }
 
 
