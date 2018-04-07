@@ -6,8 +6,6 @@ import org.junit.Before;
 import org.junit.Test;
 import po.PlayerPo;
 
-import static org.junit.Assert.*;
-
 public class DaoFactoryTest
 {
 

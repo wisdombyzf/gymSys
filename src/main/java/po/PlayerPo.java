@@ -1,11 +1,10 @@
 package po;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
 @Table(name = "player", schema = "gaysys", catalog = "")
-public class PlayerPo implements Serializable
+public class PlayerPo
 {
     private String playerId;
     private Integer age;
@@ -13,6 +12,7 @@ public class PlayerPo implements Serializable
     private String idCard;
     private String name;
     private String teamName;
+    private String sex;
 
     @Id
     @Column(name = "player_id", nullable = false, length = 20)
@@ -114,5 +114,17 @@ public class PlayerPo implements Serializable
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (teamName != null ? teamName.hashCode() : 0);
         return result;
+    }
+
+    @Basic
+    @Column(name = "sex", nullable = true, length = 255)
+    public String getSex()
+    {
+        return sex;
+    }
+
+    public void setSex(String sex)
+    {
+        this.sex = sex;
     }
 }

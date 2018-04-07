@@ -18,5 +18,20 @@
             <result name="fail">/fail.jsp</result>
             <result name="success">/success.jsp</result>
         </action>
+
+        <action name="add_player" class="action.TeamAction" method="AddPlayer">
+            <result name="fail">/fail.jsp</result>
+            <result name="success">/success.jsp</result>
+        </action>
+
+        <action name="Enroll" class="action.EnrollAction">
+            <result name="fail">/fail.jsp</result>
+            <result name="success">/success.jsp</result>
+        </action>
+        <action name="get_player" class="action.GetJSON" method="getAllPlayer">
+            <result name="fail">/fail.jsp</result>
+        </action>
     </package>
+
+
 </struts>

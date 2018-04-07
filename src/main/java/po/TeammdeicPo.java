@@ -36,7 +36,7 @@ public class TeammdeicPo
     }
 
     @Basic
-    @Column(name = "PhoneNum", nullable = false, length = 20)
+    @Column(name = "PhoneNum", nullable = true, length = 20)
     public String getPhoneNum()
     {
         return phoneNum;
@@ -48,7 +48,7 @@ public class TeammdeicPo
     }
 
     @Basic
-    @Column(name = "TeamName", nullable = false, length = 255)
+    @Column(name = "TeamName", nullable = true, length = 255)
     public String getTeamName()
     {
         return teamName;

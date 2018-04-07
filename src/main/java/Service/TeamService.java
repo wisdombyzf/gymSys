@@ -75,6 +75,7 @@ public class TeamService
         {
             e.printStackTrace();
         }
+        dao.save(po);
         return true;
     }
 
@@ -97,6 +98,7 @@ public class TeamService
         {
             e.printStackTrace();
         }
+        dao.save(po);
         return true;
     }
 
@@ -119,6 +121,7 @@ public class TeamService
         {
             e.printStackTrace();
         }
+        dao.save(po);
         return true;
     }
 

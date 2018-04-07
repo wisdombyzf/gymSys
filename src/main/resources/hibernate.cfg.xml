@@ -8,11 +8,9 @@
     更新一次，添加一次。。。刷的一下。。。就没了。。。有毒吧 -->
     <!--<property name="connection.username">root</property>-->
     <property name="connection.username">root</property>
-
     <!--  mysql密码  -->
     <!--    <property name="connection.password">123456</property>-->
     <property name="connection.password">123456</property>
-
     <!--  mysql驱动  -->
     <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 
@@ -32,13 +30,13 @@
     <property name="hbm2ddl.auto">update</property>
 
 
-    <mapping class="po.PlayerPo"/>
     <mapping class="po.AdminPo"/>
     <mapping class="po.TeamPo"/>
     <mapping class="po.JudgerPo"/>
     <mapping class="po.TeamcoachPo"/>
     <mapping class="po.TeamleaderPo"/>
     <mapping class="po.TeammdeicPo"/>
+    <mapping class="po.PlayerPo"/>
 
     <!-- 映射 -->
 
