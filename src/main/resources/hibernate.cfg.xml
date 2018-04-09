@@ -38,6 +38,7 @@
     <mapping class="po.TeammdeicPo"/>
     <mapping class="po.PlayerPo"/>
     <mapping class="po.GamePo"/>
+    <mapping class="po.ScorePo"/>
 
       <!-- 映射 -->
 

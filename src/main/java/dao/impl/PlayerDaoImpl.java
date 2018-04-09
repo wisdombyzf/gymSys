@@ -20,6 +20,16 @@ public class PlayerDaoImpl extends BaseDaoImpl<PlayerPo> implements PlayerDao
           return findByHQL("from PlayerPo");
      }
 
+     /**
+      * 取得该队的所有运动员列表
+      *
+      * @param teamName 队名
+      * @return
+      */
+     public List<PlayerPo> findByTeamName(String teamName)
+     {
+          return findByHQL("from PlayerPo where teamName like '"+teamName+"'");
+     }
 
 
 }

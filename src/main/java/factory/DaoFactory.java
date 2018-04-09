@@ -45,4 +45,8 @@ public class DaoFactory
         return new GameDaoImpl();
     }
 
+    public static ScoreDao getScroeDao()
+    {
+        return new ScoreDaoImpl();
+    }
 }

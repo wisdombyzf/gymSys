@@ -242,4 +242,46 @@ public class TeamService
     }
 
 
+    /**
+     * 取得某队的所有运动员
+     * @param teamName
+     * @return
+     */
+    public List<PlayerVo> getPlayerByTeam (String teamName)
+    {
+        PlayerDao dao=DaoFactory.getPlayerDao();
+        List<PlayerPo> pos = dao.findByTeamName(teamName);
+        List<PlayerVo> vos=new ArrayList<PlayerVo>();
+        for (PlayerPo po:pos)
+        {
+            try
+            {
+                PlayerVo vo=new PlayerVo();
+                BeanUtils.copyProperties(vo,po);
+                vos.add(vo);
+            } catch (IllegalAccessException e)
+            {
+                e.printStackTrace();
+            } catch (InvocationTargetException e)
+            {
+                e.printStackTrace();
+            }
+        }
+        return vos;
+    }
+
+    /**
+     * 计算团体总成绩
+     * @return
+     */
+    public boolean getTeamScore(String teamName)
+    {
+        List<PlayerVo> vos = getPlayerByTeam(teamName);
+        double result=0;
+        for (PlayerVo vo:vos)
+        {
+
+        }
+
+    }
 }
