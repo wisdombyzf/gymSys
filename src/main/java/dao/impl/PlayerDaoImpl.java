@@ -19,4 +19,7 @@ public class PlayerDaoImpl extends BaseDaoImpl<PlayerPo> implements PlayerDao
      {
           return findByHQL("from PlayerPo");
      }
+
+
+
 }

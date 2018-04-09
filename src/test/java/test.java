@@ -1,26 +1,41 @@
+import org.omg.CORBA.PUBLIC_MEMBER;
+import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 
-
-
-import Service.TeamService;
-import net.sf.json.JSONArray;
-import test.*;
-import vo.PlayerVo;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-
-public class test
+public class test extends Thread
 {
-    public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException
+    int a;
+    public static void main(String []args)
     {
-        test2 t2=new test2();
-        Object object=t2.test21(Class.forName("String"));
-
+        int a=11;
+        String s=String.format("%04d",a);
+        System.out.println(s);
     }
-
-
 }
 
+class MyThread extends Thread
+{
+    static int num=0;
+    @Override
+    public  void run ()
+    {
+        while (true)
+        {
+           print();
+        }
+    }
+
+    private synchronized void print()
+    {
+        num++;
+        System.out.println(this.getName()+"值为"+num);
+        try
+        {
+            sleep(1000);
+        } catch (InterruptedException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+}
 

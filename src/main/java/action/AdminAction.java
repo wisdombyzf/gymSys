@@ -8,7 +8,6 @@ public class AdminAction extends BaseAction
 {
     private String username;
     private String password;
-
     private String teamName;
     private String teamAccount;
     private String teampassword;

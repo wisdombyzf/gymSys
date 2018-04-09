@@ -31,12 +31,21 @@ public class EnrollAction extends BaseAction
         teamMdeicVo.setPhoneNum(map.get("DocTel")[0]);
         service.AddMdeic(teamMdeicVo);
 
+        /**
+         * 运动员编号设定规则
+         * 系统自动为每个运动员生成运动员号码
+         * 从000到999
+         * 女运动员为双号，男运动员为单号
+         * 东道主排在最后。。。
+         * 包报名完毕后在统一设定
+         */
         //添加运动员
         final String name="playerName";
         final String id="playerID";
         final String age="playerAge";
         final String sex="sex";
-        //TODO 组别设置待定...同时将playerid设为身份证号
+        final String choose="checkbox";
+        //TODO 组别设置待定...同时暂时将playerid设为身份证号
 
         for (int i=1;map.containsKey(name+i);i++)
         {
@@ -46,6 +55,16 @@ public class EnrollAction extends BaseAction
             playerVo.setIdCard(map.get(id+i)[0]);
             playerVo.setAge(Integer.valueOf(map.get(age+i)[0]));
             playerVo.setSex(map.get(sex+i+"Option")[0]);
+
+            //添加该运动员对应比赛项目
+            String []temp=map.get(choose+i+"Option");
+            StringBuffer stringBuffer=new StringBuffer();
+            for (String s:temp)
+            {
+                stringBuffer.append(s+',');
+            }
+            playerVo.setEvent(stringBuffer.toString());
+
             service.AddPlayer(playerVo);
         }
 

@@ -12,4 +12,5 @@ public interface PlayerDao extends BaseDao<PlayerPo>
      * @return
      */
     List<PlayerPo> getAllPlayerList();
+
 }

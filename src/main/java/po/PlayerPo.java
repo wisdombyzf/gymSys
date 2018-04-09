@@ -14,7 +14,7 @@ public class PlayerPo
     private String teamName;
     private String sex;
 
-    @Id
+    @Basic
     @Column(name = "player_id", nullable = false, length = 20)
     public String getPlayerId()
     {
@@ -50,7 +50,7 @@ public class PlayerPo
         this.event = event;
     }
 
-    @Basic
+    @Id
     @Column(name = "id_card", nullable = true, length = 255)
     public String getIdCard()
     {

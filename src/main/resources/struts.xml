@@ -31,8 +31,16 @@
         <action name="get_player" class="action.GetJSON" method="getAllPlayer">
             <result name="fail">/fail.jsp</result>
         </action>
+        <!--文件上传 -->
         <action name="upload" class="action.UploadAction" method="upload">
+        </action>
 
+        <action name="get_coach" class="action.GetJSON" method="getAllCoach">
+            <result name="fail">/fail.jsp</result>
+        </action>
+
+        <action name="get_judger" class="action.GetJSON" method="getAllJudger">
+            <result name="fail">/fail.jsp</result>
         </action>
     </package>
 

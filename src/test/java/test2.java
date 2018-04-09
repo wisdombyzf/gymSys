@@ -1,9 +1,7 @@
 public class test2
 {
-    public <T> T test21(Class<T> c) throws IllegalAccessException, InstantiationException
+    public <Q> void print(Q q)
     {
-        T a=c.newInstance();
-        System.out.println(a);
-        return a;
+        System.out.println("print:" + q.getClass().getName());
     }
 }

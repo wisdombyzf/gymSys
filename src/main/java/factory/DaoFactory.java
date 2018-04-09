@@ -40,5 +40,9 @@ public class DaoFactory
         return new JudgerDaoImpl();
     }
 
+    public static GameDao getGameDao()
+    {
+        return new GameDaoImpl();
+    }
 
 }

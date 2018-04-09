@@ -236,6 +236,7 @@ public class BaseDaoImpl<T> implements BaseDao<T>
         return obj;
     }
 
+
     /**
      * 根据HQL返回对象List
      *

@@ -1,5 +1,6 @@
 package dao.impl;
 
+import Service.PlayerService;
 import dao.PlayerDao;
 import factory.DaoFactory;
 import org.junit.Test;
@@ -13,8 +14,8 @@ public class PlayerDaoImplTest
     @Test
     public void getPlayerList()
     {
-        PlayerDao dao= DaoFactory.getPlayerDao();
-        List<PlayerPo> pos=dao.getAllPlayerList();
-        System.out.println(pos);
+        PlayerService service=new PlayerService();
+        service.getGamelist("SG");
+
     }
 }
