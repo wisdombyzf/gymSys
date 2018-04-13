@@ -1075,6 +1075,7 @@
     </column>
     <column id="265" parent="238" name="event">
       <Position>3</Position>
+      <Comment>运动员项目和成绩的json</Comment>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
@@ -1101,170 +1102,182 @@
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="270" parent="238" name="PRIMARY">
+    <column id="270" parent="238" name="score">
+      <Position>8</Position>
+      <Comment>个人全能成绩</Comment>
+      <DataType>double(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="271" parent="238" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_card</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="271" parent="239" name="MatchID">
+    <column id="272" parent="239" name="MatchID">
       <Position>1</Position>
       <Comment>比赛场次id</Comment>
       <DataType>varchar(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="272" parent="239" name="JudgeID">
+    <column id="273" parent="239" name="JudgeID">
       <Position>2</Position>
       <Comment>裁判id</Comment>
       <DataType>varchar(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="273" parent="239" name="PlayerID">
+    <column id="274" parent="239" name="PlayerID">
       <Position>3</Position>
       <Comment>运动员id</Comment>
       <DataType>varchar(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="274" parent="239" name="Score">
+    <column id="275" parent="239" name="Score">
       <Position>4</Position>
       <Comment>打出的分数</Comment>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="275" parent="239" name="ScoreAccept">
+    <column id="276" parent="239" name="ScoreAccept">
       <Position>5</Position>
       <Comment>分数是否被接受</Comment>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="276" parent="239" name="PRIMARY">
+    <key id="277" parent="239" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>MatchID
 JudgeID
 PlayerID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="277" parent="240" name="team_name">
+    <column id="278" parent="240" name="team_name">
       <Position>1</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="278" parent="240" name="TeamAccount">
+    <column id="279" parent="240" name="TeamAccount">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="279" parent="240" name="Password">
+    <column id="280" parent="240" name="Password">
       <Position>3</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="280" parent="240" name="File">
+    <column id="281" parent="240" name="File">
       <Position>4</Position>
       <Comment>队伍上传文件，待定</Comment>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="281" parent="240" name="PRIMARY">
+    <column id="282" parent="240" name="Score">
+      <Position>5</Position>
+      <Comment>团体总成绩</Comment>
+      <DataType>double(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="283" parent="240" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>team_name</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="282" parent="241" name="ID">
+    <column id="284" parent="241" name="ID">
       <Position>1</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="283" parent="241" name="Name">
+    <column id="285" parent="241" name="Name">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="284" parent="241" name="PhoneNum">
+    <column id="286" parent="241" name="PhoneNum">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="285" parent="241" name="Gender">
+    <column id="287" parent="241" name="Gender">
       <Position>4</Position>
       <Comment>性别</Comment>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="286" parent="241" name="TeamName">
+    <column id="288" parent="241" name="TeamName">
       <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="287" parent="241" name="PRIMARY">
+    <key id="289" parent="241" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="288" parent="242" name="id">
+    <column id="290" parent="242" name="id">
       <Position>1</Position>
       <Comment>领队id</Comment>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="289" parent="242" name="name">
+    <column id="291" parent="242" name="name">
       <Position>2</Position>
       <Comment>领队姓名</Comment>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="290" parent="242" name="phone_num">
+    <column id="292" parent="242" name="phone_num">
       <Position>3</Position>
       <Comment>领队电话</Comment>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="291" parent="242" name="team_name">
+    <column id="293" parent="242" name="team_name">
       <Position>4</Position>
       <Comment>领队所属队伍名</Comment>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="292" parent="242" name="PRIMARY">
+    <key id="294" parent="242" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="293" parent="243" name="ID">
+    <column id="295" parent="243" name="ID">
       <Position>1</Position>
       <Comment>身份证号</Comment>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="294" parent="243" name="Name">
+    <column id="296" parent="243" name="Name">
       <Position>2</Position>
       <Comment>姓名</Comment>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="295" parent="243" name="PhoneNum">
+    <column id="297" parent="243" name="PhoneNum">
       <Position>3</Position>
       <Comment>电话号码</Comment>
       <DataType>varchar(20)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="296" parent="243" name="TeamName">
+    <column id="298" parent="243" name="TeamName">
       <Position>4</Position>
       <Comment>所属队名</Comment>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="297" parent="243" name="PRIMARY">
+    <key id="299" parent="243" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>

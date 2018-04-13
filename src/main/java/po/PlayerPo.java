@@ -13,6 +13,7 @@ public class PlayerPo
     private String name;
     private String teamName;
     private String sex;
+    private Double score;
 
     @Basic
     @Column(name = "player_id", nullable = false, length = 20)
@@ -51,7 +52,7 @@ public class PlayerPo
     }
 
     @Id
-    @Column(name = "id_card", nullable = true, length = 255)
+    @Column(name = "id_card", nullable = false, length = 255)
     public String getIdCard()
     {
         return idCard;
@@ -126,5 +127,17 @@ public class PlayerPo
     public void setSex(String sex)
     {
         this.sex = sex;
+    }
+
+    @Basic
+    @Column(name = "score", nullable = true, precision = 0)
+    public Double getScore()
+    {
+        return score;
+    }
+
+    public void setScore(Double score)
+    {
+        this.score = score;
     }
 }

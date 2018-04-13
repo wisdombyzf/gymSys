@@ -30,4 +30,31 @@ public class TeamServiceTest
     public void addMdeic()
     {
     }
+
+    @Test
+    public void getJudgerList()
+    {
+    }
+
+    @Test
+    public void getCoachList()
+    {
+    }
+
+    @Test
+    public void getMdeicList()
+    {
+    }
+
+    @Test
+    public void getPlayerByTeam()
+    {
+    }
+
+    @Test
+    public void getTeamScore()
+    {
+        TeamService service=new TeamService();
+        service.getTeamScore("1");
+    }
 }

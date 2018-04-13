@@ -17,6 +17,13 @@ public class JudgeServiceTest
 
         JudgeService service=new JudgeService();
         List<ScoreVo> list = service.getAllSroce();
-        service.getResult(0.0,0.0,"1","112");
+        service.getResult(0.0,0.0,"DG","112");
+    }
+
+    @Test
+    public void setPlayerScore()
+    {
+        JudgeService service=new JudgeService();
+        service.setPlayerScore("112");
     }
 }

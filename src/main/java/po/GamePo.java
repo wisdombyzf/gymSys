@@ -10,6 +10,7 @@ public class GamePo
     private String gameId;
     private String groups;
     private int id;
+    private String playerName;
 
     @Basic
     @Column(name = "player_id", nullable = true, length = 255)
@@ -83,5 +84,17 @@ public class GamePo
         result = 31 * result + (groups != null ? groups.hashCode() : 0);
         result = 31 * result + id;
         return result;
+    }
+
+    @Basic
+    @Column(name = "player_name", nullable = true, length = 255)
+    public String getPlayerName()
+    {
+        return playerName;
+    }
+
+    public void setPlayerName(String playerName)
+    {
+        this.playerName = playerName;
     }
 }

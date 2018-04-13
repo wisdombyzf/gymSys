@@ -10,6 +10,7 @@ public class TeamPo
     private String teamAccount;
     private String password;
     private String file;
+    private Double score;
 
     @Id
     @Column(name = "team_name", nullable = false, length = 20)
@@ -85,4 +86,15 @@ public class TeamPo
         return result;
     }
 
+    @Basic
+    @Column(name = "Score", nullable = true, precision = 0)
+    public Double getScore()
+    {
+        return score;
+    }
+
+    public void setScore(Double score)
+    {
+        this.score = score;
+    }
 }

@@ -1,11 +1,18 @@
 package Service;
 
+import dao.PlayerDao;
 import dao.ScoreDao;
 import factory.DaoFactory;
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 import org.apache.commons.beanutils.BeanUtils;
+import org.hibernate.transform.TupleSubsetResultTransformer;
+import po.PlayerPo;
 import po.ScorePo;
+import vo.PlayerVo;
 import vo.ScoreVo;
 
+import javax.print.attribute.DocAttribute;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
@@ -147,7 +154,40 @@ public class JudgeService
         result-=minNum;
         result=(result/(list.size()-2))+D-P;
         System.out.println("成绩是:"+result);
+
+        //储存到数据库
+        PlayerDao playerDao=DaoFactory.getPlayerDao();
+        PlayerPo playerPo=playerDao.findById(playerID);
+
+        String event=playerPo.getEvent();
+        JSONObject jsonObject=JSONObject.fromObject(event);
+        String score=jsonObject.getString(gameID);
+        jsonObject.put(gameID,String.valueOf(result));
+
+        playerPo.setEvent(jsonObject.toString());
+        playerDao.update(playerPo);
         return result;
+    }
+
+    /**
+     * 计算运动员个人全能成绩
+     * @return
+     */
+    public boolean setPlayerScore(String id)
+    {
+        ScoreDao scroeDao= DaoFactory.getScroeDao();
+        List<ScorePo> pos = scroeDao.findByPlayerID(id);
+        double result=0;
+        for (ScorePo po:pos)
+        {
+            result+=po.getScore();
+        }
+        System.out.println("单项成绩是:"+result);
+        PlayerDao playerDao=DaoFactory.getPlayerDao();
+        PlayerPo playerPo = playerDao.findById(id);
+        playerPo.setScore(result);
+        playerDao.update(playerPo);
+        return true;
     }
 
 }

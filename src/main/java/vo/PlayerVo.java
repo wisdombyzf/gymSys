@@ -11,6 +11,7 @@ public class PlayerVo implements Serializable
     private String name;
     private String teamName;
     private String sex;
+    private Double score;
 
     public String getPlayerId()
     {
@@ -82,5 +83,15 @@ public class PlayerVo implements Serializable
     public void setSex(String sex)
     {
         this.sex = sex;
+    }
+
+    public Double getScore()
+    {
+        return score;
+    }
+
+    public void setScore(Double score)
+    {
+        this.score = score;
     }
 }

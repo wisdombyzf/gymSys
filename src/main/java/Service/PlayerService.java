@@ -110,6 +110,12 @@ public class PlayerService
     }
 
 
+
+    /**
+     * 获取。。。。我去。。。忘了
+     * @param gameID
+     * @return
+     */
     public List<GamePo> getGamelist(String gameID)
     {
         GameDao gameDao=DaoFactory.getGameDao();

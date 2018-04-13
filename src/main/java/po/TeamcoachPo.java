@@ -14,7 +14,7 @@ public class TeamcoachPo
 
     @Basic
     @Id
-    @Column(name = "ID", nullable = true, length = 255)
+    @Column(name = "ID", nullable = false, length = 255)
     public String getId()
     {
         return id;
@@ -26,7 +26,7 @@ public class TeamcoachPo
     }
 
     @Basic
-    @Column(name = "Name", nullable = true, length = 255)
+    @Column(name = "Name", nullable = false, length = 255)
     public String getName()
     {
         return name;

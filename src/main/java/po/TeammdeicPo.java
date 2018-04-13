@@ -24,7 +24,7 @@ public class TeammdeicPo
     }
 
     @Basic
-    @Column(name = "Name", nullable = false, length = 255)
+    @Column(name = "Name", nullable = true, length = 255)
     public String getName()
     {
         return name;

@@ -9,6 +9,8 @@ public class TeamVo implements Serializable
     private String teamAccount;
     private String password;
     private String file;
+    private Double score;
+
 
     public String getTeamName()
     {
@@ -50,4 +52,13 @@ public class TeamVo implements Serializable
         this.file = file;
     }
 
+    public Double getScore()
+    {
+        return score;
+    }
+
+    public void setScore(Double score)
+    {
+        this.score = score;
+    }
 }

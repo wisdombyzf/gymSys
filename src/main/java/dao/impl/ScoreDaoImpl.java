@@ -20,6 +20,17 @@ public class ScoreDaoImpl extends BaseDaoImpl<ScorePo> implements ScoreDao
     }
 
     /**
+     * 取得某运动员的所有分数记录
+     *
+     * @param PlayerID
+     * @return
+     */
+    public List<ScorePo> findByPlayerID(String PlayerID)
+    {
+        return findByHQL("from ScorePo where playerId like '"+PlayerID+"'");
+    }
+
+    /**
      *取得某运动员的所有分数记录
      * @param gameID
      * @return
@@ -29,6 +40,8 @@ public class ScoreDaoImpl extends BaseDaoImpl<ScorePo> implements ScoreDao
         //TODO 待改进
         return findByHQL("from GamePo where gameId like '"+gameID+"'");
     }
+
+
 
     /**
      * 取得某运动员某项比赛的所有分数记录

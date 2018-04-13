@@ -14,7 +14,14 @@ public interface ScoreDao extends BaseDao<ScorePo>
     List<ScorePo> getAllScoreList();
 
     /**
-     *取得某运动员的所有分数记录
+     * 取得某运动员的所有分数记录
+     * @param PlayerID
+     * @return
+     */
+    public List<ScorePo> findByPlayerID(String PlayerID);
+
+    /**
+     * 取得某场比赛的所有分数记录
      * @param gameID
      * @return
      */

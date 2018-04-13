@@ -280,8 +280,15 @@ public class TeamService
         double result=0;
         for (PlayerVo vo:vos)
         {
-
+            result+=vo.getScore();
         }
+        System.out.println("总成绩是:"+result);
 
+        //team中添加总成绩
+        TeamDao teamDao=DaoFactory.getTeamDao();
+        TeamPo teamPo=teamDao.findById(teamName);
+        teamPo.setScore(result);
+        teamDao.update(teamPo);
+        return true;
     }
 }
