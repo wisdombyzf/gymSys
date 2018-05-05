@@ -13,7 +13,7 @@ public class TeamPo
     private Double score;
 
     @Id
-    @Column(name = "team_name", nullable = false, length = 20)
+    @Column(name = "TeamName", nullable = false, length = 20)
     public String getTeamName()
     {
         return teamName;

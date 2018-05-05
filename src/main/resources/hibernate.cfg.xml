@@ -8,10 +8,10 @@
     更新一次，添加一次。。。刷的一下。。。就没了。。。有毒吧 -->
     <!--<property name="connection.username">root</property>-->
     <property name="connection.username">root</property>
-      <!--  mysql密码  -->
-    <!--    <property name="connection.password">123456</property>-->
+    <!--  mysql密码  -->
     <property name="connection.password">123456</property>
-      <!--  mysql驱动  -->
+    <!--    <property name="connection.password">123456</property>-->
+    <!--  mysql驱动  -->
     <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 
     <!--  mysql连接URL  -->
@@ -39,8 +39,11 @@
     <mapping class="po.PlayerPo"/>
     <mapping class="po.GamePo"/>
     <mapping class="po.ScorePo"/>
+    <mapping class="po.MatchPo"/>
+    <mapping class="po.MatchjudgePo"/>
+    <mapping class="po.PlayerMatchPo"/>
 
-      <!-- 映射 -->
+    <!-- 映射 -->
 
 
   </session-factory>

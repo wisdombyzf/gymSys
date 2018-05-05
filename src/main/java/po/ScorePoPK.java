@@ -10,7 +10,7 @@ public class ScorePoPK implements Serializable
     private String judgeId;
     private String playerId;
 
-    @Column(name = "MatchID", nullable = false, length = 11)
+    @Column(name = "MatchID", nullable = false, length = 255)
     @Id
     public String getMatchId()
     {
@@ -22,7 +22,7 @@ public class ScorePoPK implements Serializable
         this.matchId = matchId;
     }
 
-    @Column(name = "JudgeID", nullable = false, length = 11)
+    @Column(name = "JudgeID", nullable = false, length = 255)
     @Id
     public String getJudgeId()
     {
@@ -34,7 +34,7 @@ public class ScorePoPK implements Serializable
         this.judgeId = judgeId;
     }
 
-    @Column(name = "PlayerID", nullable = false, length = 11)
+    @Column(name = "PlayerID", nullable = false, length = 255)
     @Id
     public String getPlayerId()
     {

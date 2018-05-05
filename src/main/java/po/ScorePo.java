@@ -14,7 +14,7 @@ public class ScorePo
     private String scoreAccept;
 
     @Id
-    @Column(name = "MatchID", nullable = false, length = 11)
+    @Column(name = "MatchID", nullable = false, length = 255)
     public String getMatchId()
     {
         return matchId;
@@ -26,7 +26,7 @@ public class ScorePo
     }
 
     @Id
-    @Column(name = "JudgeID", nullable = false, length = 11)
+    @Column(name = "JudgeID", nullable = false, length = 255)
     public String getJudgeId()
     {
         return judgeId;
@@ -38,7 +38,7 @@ public class ScorePo
     }
 
     @Id
-    @Column(name = "PlayerID", nullable = false, length = 11)
+    @Column(name = "PlayerID", nullable = false, length = 255)
     public String getPlayerId()
     {
         return playerId;
@@ -50,7 +50,7 @@ public class ScorePo
     }
 
     @Basic
-    @Column(name = "Score", nullable = true)
+    @Column(name = "Score", nullable = true, precision = 0)
     public Integer getScore()
     {
         return score;
