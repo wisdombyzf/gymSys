@@ -11,9 +11,10 @@ public class PlayerPo
     private String event;
     private String idCard;
     private String name;
-    private String teamName;
     private String sex;
     private Double score;
+    private String teamName;
+    private String group;
 
     @Basic
     @Column(name = "player_id", nullable = false, length = 20)
@@ -76,48 +77,6 @@ public class PlayerPo
     }
 
     @Basic
-    @Column(name = "team_name", nullable = true, length = 255)
-    public String getTeamName()
-    {
-        return teamName;
-    }
-
-    public void setTeamName(String teamName)
-    {
-        this.teamName = teamName;
-    }
-
-    @Override
-    public boolean equals(Object o)
-    {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        PlayerPo playerPo = (PlayerPo) o;
-
-        if (playerId != null ? !playerId.equals(playerPo.playerId) : playerPo.playerId != null) return false;
-        if (age != null ? !age.equals(playerPo.age) : playerPo.age != null) return false;
-        if (event != null ? !event.equals(playerPo.event) : playerPo.event != null) return false;
-        if (idCard != null ? !idCard.equals(playerPo.idCard) : playerPo.idCard != null) return false;
-        if (name != null ? !name.equals(playerPo.name) : playerPo.name != null) return false;
-        if (teamName != null ? !teamName.equals(playerPo.teamName) : playerPo.teamName != null) return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode()
-    {
-        int result = playerId != null ? playerId.hashCode() : 0;
-        result = 31 * result + (age != null ? age.hashCode() : 0);
-        result = 31 * result + (event != null ? event.hashCode() : 0);
-        result = 31 * result + (idCard != null ? idCard.hashCode() : 0);
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (teamName != null ? teamName.hashCode() : 0);
-        return result;
-    }
-
-    @Basic
     @Column(name = "sex", nullable = true, length = 255)
     public String getSex()
     {
@@ -139,5 +98,66 @@ public class PlayerPo
     public void setScore(Double score)
     {
         this.score = score;
+    }
+
+    @Basic
+    @Column(name = "team_name", nullable = true, length = 255)
+    public String getTeamName()
+    {
+        return teamName;
+    }
+
+    public void setTeamName(String teamName)
+    {
+        this.teamName = teamName;
+    }
+
+    @Basic
+    @Column(name = "playerGroup", nullable = true, length = 255)
+    public String getGroup()
+    {
+        return group;
+    }
+
+    public void setGroup(String playerGroup)
+    {
+        this.group = playerGroup;
+    }
+
+    @Override
+    public boolean equals(Object o)
+    {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        PlayerPo playerPo = (PlayerPo) o;
+
+        if (playerId != null ? !playerId.equals(playerPo.playerId) : playerPo.playerId != null) return false;
+        if (age != null ? !age.equals(playerPo.age) : playerPo.age != null) return false;
+        if (event != null ? !event.equals(playerPo.event) : playerPo.event != null) return false;
+        if (idCard != null ? !idCard.equals(playerPo.idCard) : playerPo.idCard != null) return false;
+        if (name != null ? !name.equals(playerPo.name) : playerPo.name != null) return false;
+        if (sex != null ? !sex.equals(playerPo.sex) : playerPo.sex != null) return false;
+        if (score != null ? !score.equals(playerPo.score) : playerPo.score != null) return false;
+        if (teamName != null ? !teamName.equals(playerPo.teamName) : playerPo.teamName != null) return false;
+        if (group != null ? !group.equals(playerPo.group) : playerPo.group != null)
+            return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        int result = playerId != null ? playerId.hashCode() : 0;
+        result = 31 * result + (age != null ? age.hashCode() : 0);
+        result = 31 * result + (event != null ? event.hashCode() : 0);
+        result = 31 * result + (idCard != null ? idCard.hashCode() : 0);
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (sex != null ? sex.hashCode() : 0);
+        result = 31 * result + (score != null ? score.hashCode() : 0);
+        result = 31 * result + (teamName != null ? teamName.hashCode() : 0);
+        result = 31 * result + (group != null ? group.hashCode() : 0);
+        return result;
     }
 }

@@ -1,7 +1,6 @@
 package dao;
 
 import po.PlayerPo;
-import po.ScorePo;
 
 import java.util.List;
 

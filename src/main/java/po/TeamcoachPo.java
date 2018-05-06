@@ -10,9 +10,7 @@ public class TeamcoachPo
     private String name;
     private String phoneNum;
     private String gender;
-    private String teamName;
 
-    @Basic
     @Id
     @Column(name = "ID", nullable = false, length = 255)
     public String getId()
@@ -61,18 +59,6 @@ public class TeamcoachPo
         this.gender = gender;
     }
 
-    @Basic
-    @Column(name = "TeamName", nullable = true, length = 255)
-    public String getTeamName()
-    {
-        return teamName;
-    }
-
-    public void setTeamName(String teamName)
-    {
-        this.teamName = teamName;
-    }
-
     @Override
     public boolean equals(Object o)
     {
@@ -85,7 +71,6 @@ public class TeamcoachPo
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
         if (phoneNum != null ? !phoneNum.equals(that.phoneNum) : that.phoneNum != null) return false;
         if (gender != null ? !gender.equals(that.gender) : that.gender != null) return false;
-        if (teamName != null ? !teamName.equals(that.teamName) : that.teamName != null) return false;
 
         return true;
     }
@@ -97,7 +82,6 @@ public class TeamcoachPo
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (phoneNum != null ? phoneNum.hashCode() : 0);
         result = 31 * result + (gender != null ? gender.hashCode() : 0);
-        result = 31 * result + (teamName != null ? teamName.hashCode() : 0);
         return result;
     }
 }

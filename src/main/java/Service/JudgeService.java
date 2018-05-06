@@ -3,16 +3,12 @@ package Service;
 import dao.PlayerDao;
 import dao.ScoreDao;
 import factory.DaoFactory;
-import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.commons.beanutils.BeanUtils;
-import org.hibernate.transform.TupleSubsetResultTransformer;
 import po.PlayerPo;
 import po.ScorePo;
-import vo.PlayerVo;
 import vo.ScoreVo;
 
-import javax.print.attribute.DocAttribute;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;

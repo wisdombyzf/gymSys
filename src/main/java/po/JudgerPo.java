@@ -11,7 +11,6 @@ public class JudgerPo
     private String password;
     private String name;
     private String phoneNum;
-    private String teamName;
 
     @Id
     @Column(name = "ID", nullable = false, length = 255)
@@ -73,18 +72,6 @@ public class JudgerPo
         this.phoneNum = phoneNum;
     }
 
-    @Basic
-    @Column(name = "TeamName", nullable = true, length = 255)
-    public String getTeamName()
-    {
-        return teamName;
-    }
-
-    public void setTeamName(String teamName)
-    {
-        this.teamName = teamName;
-    }
-
     @Override
     public boolean equals(Object o)
     {
@@ -99,7 +86,6 @@ public class JudgerPo
         if (password != null ? !password.equals(judgerPo.password) : judgerPo.password != null) return false;
         if (name != null ? !name.equals(judgerPo.name) : judgerPo.name != null) return false;
         if (phoneNum != null ? !phoneNum.equals(judgerPo.phoneNum) : judgerPo.phoneNum != null) return false;
-        if (teamName != null ? !teamName.equals(judgerPo.teamName) : judgerPo.teamName != null) return false;
 
         return true;
     }
@@ -112,7 +98,6 @@ public class JudgerPo
         result = 31 * result + (password != null ? password.hashCode() : 0);
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (phoneNum != null ? phoneNum.hashCode() : 0);
-        result = 31 * result + (teamName != null ? teamName.hashCode() : 0);
         return result;
     }
 }

@@ -38,6 +38,7 @@ public class GetJSON extends BaseAction
         {
             jsonArray.add(vo);
         }
+
         out.print(jsonArray);
         out.flush();
         out.close();
@@ -64,6 +65,7 @@ public class GetJSON extends BaseAction
         out.close();
         return "fail";
     }
+
 
     /**
      * 教练表
@@ -106,5 +108,7 @@ public class GetJSON extends BaseAction
         out.close();
         return "fail";
     }
+
+
 
 }

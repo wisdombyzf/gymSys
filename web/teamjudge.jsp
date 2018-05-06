@@ -1,150 +1,18 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>及讯</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.7 -->
-     <link rel="stylesheet" href="/master/bower_components/bootstrap/dist/css/bootstrap.min.css" >
-  <!-- Font Awesome -->
-     <link rel="stylesheet" href="/master/bower_components/font-awesome/css/font-awesome.min.css" >
-  <!-- Ionicons -->
-     <link rel="stylesheet" href="/master/bower_components/Ionicons/css/ionicons.min.css" >
-  <!-- BootstrapTables -->
-     <link rel="stylesheet" href="/master/bower_components/bootstrap-table-master/dist/bootstrap-table.css" >
-     <link rel="stylesheet" href="/master/bower_components/bootstrap-table-click-edit-row/bootstrap-table-click-edit-row.css" >
-  <!-- Theme style -->
-     <link rel="stylesheet" href="/master/dist/css/AdminLTE.min.css" >
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-     <link rel="stylesheet" href="/master/dist/css/skins/skin-blue.css" >
-     <link rel="stylesheet" href="/master/bower_components/bootstrap-select/dist/css/bootstrap-select.min.css" >
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
-  <!-- Google Font -->
-  <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <title>裁判表页面</title>
+  <jsp:include page="Common_css_js.jsp"></jsp:include>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
-  <header class="main-header">
-    <!-- Logo -->
-    <a href="." class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>及讯</b></span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>及讯</b><small>赛事管理系统</small></span>
-    </a>
-    <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top">
-      <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-          <!-- User Account: style can be found in dropdown.less -->
-          <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="/master/dist/img/user2-160x160.jpg"   class="user-image" alt="User Image">
-              <span class="hidden-xs">CodeofJackie</span>
-            </a>
-            <ul class="dropdown-menu">
-              <!-- User image -->
-              <li class="user-header">
-                <img src="/master/dist/img/user2-160x160.jpg"   class="img-circle" alt="User Image">
-                <p>
-                  CodeofJackie - Web Developer
-                  <small>Member since Nov. 2012</small>
-                </p>
-              </li>
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">用户</a>
-                </div>
-                <div class="pull-right">
-                  <a href="LogoutAdmin" class="btn btn-default btn-flat">登出</a>
-                </div>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+  <jsp:include page="teamHeader.jsp"></jsp:include>
   <!-- Left side column. contains the logo and sidebar -->
-  <aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
-      <!-- 侧边栏 用户 面板 -->
-      <div class="user-panel">
-        <div class="pull-left image">
-          <img src="/master/dist/img/user2-160x160.jpg"   class="img-circle" alt="User Image">
-        </div>
-        <div class="pull-left info">
-          <p>CodeofJackie</p>
-          <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
-        </div>
-      </div>
-      <!-- 侧边栏菜单: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">主菜单</li>
-
-        <li class="active treeview">
-          <a href="#">
-            <i class="fa fa-user"></i> <span>人员表</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="/GameAdmin/Player"><i class="fa fa-circle-o"></i>运动员表</a></li>
-            <li><a href="/GameAdmin/Judge"><i class="fa fa-circle-o"></i>裁判表</a></li>
-            <li><a href="/GameAdmin/TeamMedic"><i class="fa fa-circle-o"></i>队医表</a></li>
-            <li><a href="/GameAdmin/TeamCoach"><i class="fa fa-circle-o"></i>教练表</a></li>
-            <li><a href="/GameAdmin/TeamLeader"><i class="fa fa-circle-o"></i>领队表</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="Match">
-            <i class="fa fa-flag"></i> <span>参赛队伍</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="Team"><i class="fa fa-circle-o"></i>参赛队伍表</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-table"></i> <span>赛事安排</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="Match"><i class="fa fa-circle-o"></i> 比赛</a></li>
-          </ul>
-        </li>
-
-      </ul>
-    </section>
-    <!-- /.sidebar -->
-  </aside>
+  <jsp:include page="teamSider.jsp"></jsp:include>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -223,7 +91,7 @@
 
   $(function () {
     $('#judge').bootstrapTable({
-      url: "http://"+window.location.hostname+"/GameAdmin/GetJSON?Table=Judge",
+      url: "http://"+window.location.hostname+":8080/get_juger",
       clickEdit: true,
       pagination:true,
       search:true,
@@ -239,29 +107,29 @@
           field: 'state',
           checkbox:true,
       },{
-          field: 'pk',
+          field: 'id',
           title: '身份证号'
       }, {
-          field: 'fields.JudgeAccount',
+          field: 'judgeAccount',
           title: '裁判账号',
           sortable: true,
           editable:"input"
       }, {
-          field: 'fields.Name',
+          field: 'name',
           title: '姓名',
           sortable: true,
           editable:"input"
       }, {
-          field: 'fields.TeamName',
+          field: 'teamName',
           title: '小队名称',
           sortable: true
        }, {
-          field: 'fields.PhoneNum',
+          field: 'phoneNum',
           title: '电话',
           sortable: true,
           editable:"input"
       },{
-        field: 'fields.Password',
+        field: 'password',
         title: '密码',
         sortable: true,
         editable:"input"

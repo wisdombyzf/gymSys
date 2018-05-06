@@ -1,10 +1,5 @@
 package util;
 
-import po.TeamleaderPo;
-import vo.TeamleaderVo;
-
-import java.util.List;
-
 public interface LeaderPo2Vo
 {
     /*

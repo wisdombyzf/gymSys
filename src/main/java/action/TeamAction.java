@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 public class TeamAction extends BaseAction
 {
 
+
     public String AddPlayer()
     {
         TeamService service= new TeamService();
@@ -50,5 +51,6 @@ public class TeamAction extends BaseAction
             return "fail";
         }
     }
+
 
 }

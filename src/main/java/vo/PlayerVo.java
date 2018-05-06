@@ -12,6 +12,7 @@ public class PlayerVo implements Serializable
     private String teamName;
     private String sex;
     private Double score;
+    private String group;
 
     public String getPlayerId()
     {
@@ -93,5 +94,15 @@ public class PlayerVo implements Serializable
     public void setScore(Double score)
     {
         this.score = score;
+    }
+
+    public String getGroup()
+    {
+        return group;
+    }
+
+    public void setGroup(String group)
+    {
+        this.group = group;
     }
 }

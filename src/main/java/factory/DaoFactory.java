@@ -5,6 +5,11 @@ import dao.impl.*;
 
 public class DaoFactory
 {
+    public static RulesDao getRulesDao()
+    {
+        return new RulesDaoIpml();
+    }
+
     public static PlayerDao getPlayerDao()
     {
         return new PlayerDaoImpl();

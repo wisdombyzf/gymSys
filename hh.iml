@@ -29,15 +29,21 @@
         <datasource-map>
           <unit-entry name="a.xml" value="74321e37-ae74-4a97-8330-066351d2dfd2" />
           <unit-entry name="hibernate.cfg.xml" value="74321e37-ae74-4a97-8330-066351d2dfd2" />
+          <unit-entry name="sessionFactory" />
         </datasource-map>
         <naming-strategy-map>
           <unit-entry name="hibernate.cfg.xml" />
+          <unit-entry name="sessionFactory" />
         </naming-strategy-map>
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/resources/hibernate.cfg.xml" />
       </configuration>
     </facet>
     <facet type="Spring" name="Spring">
-      <configuration />
+      <configuration>
+        <fileset id="fileset" name="Application" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resources/application.xml</file>
+        </fileset>
+      </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5">

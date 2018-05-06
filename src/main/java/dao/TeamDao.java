@@ -1,9 +1,9 @@
 package dao;
 
-import po.PlayerPo;
 import po.TeamPo;
 
 import java.util.List;
+
 
 public interface TeamDao extends BaseDao<TeamPo>
 {

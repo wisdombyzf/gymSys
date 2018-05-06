@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>登录</title>
+  <title>普通用户登录界面</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -43,15 +43,16 @@
   <!-- /.login-logo -->
   <div class="login-box-body">
 
-    <form action="LoginAdmin" method="post">
+    <form action="login.action" method="post">
       <div class="form-group has-feedback">
-        <input type="text" name="AdminName" class="form-control" placeholder="账号">
+        <input type="text" name="username" class="form-control" placeholder="账号">
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
         <input type="password" name="password" class="form-control" placeholder="密码">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
+
       <div class="row">
         <div class="col-xs-12">
           <input type="submit" value="登录" class="btn btn-primary btn-block btn-flat"/>

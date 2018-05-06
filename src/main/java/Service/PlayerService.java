@@ -6,7 +6,6 @@ import factory.DaoFactory;
 import po.GamePo;
 import po.PlayerPo;
 
-import javax.print.attribute.standard.RequestingUserName;
 import java.io.Serializable;
 import java.util.*;
 
@@ -65,6 +64,7 @@ public class PlayerService
         return true;
     }
 
+
     /**
      * 设置比赛表
      *
@@ -108,6 +108,8 @@ public class PlayerService
         }
         return true;
     }
+
+
 
 
 

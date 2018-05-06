@@ -1,10 +1,12 @@
 package dao.impl;
 
 import dao.TeamDao;
+import org.springframework.stereotype.Repository;
 import po.TeamPo;
 
 import java.util.List;
 
+@Repository("TeamDao")
 public class TeamDaoImpl extends BaseDaoImpl<TeamPo> implements TeamDao
 {
 

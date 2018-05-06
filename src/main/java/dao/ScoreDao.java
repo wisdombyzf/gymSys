@@ -1,7 +1,6 @@
 package dao;
 
 import po.ScorePo;
-import po.TeamcoachPo;
 
 import java.util.List;
 

@@ -1,6 +1,5 @@
 package dao;
 
-import po.TeamPo;
 import po.TeammdeicPo;
 
 import java.util.List;

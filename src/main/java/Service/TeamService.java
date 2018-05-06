@@ -2,8 +2,8 @@ package Service;
 
 import dao.*;
 import factory.DaoFactory;
-import net.sf.json.JSONArray;
 import org.apache.commons.beanutils.BeanUtils;
+import org.springframework.stereotype.Service;
 import po.*;
 import vo.*;
 
@@ -11,6 +11,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class TeamService
 {
     /**
@@ -290,5 +291,25 @@ public class TeamService
         teamPo.setScore(result);
         teamDao.update(teamPo);
         return true;
+    }
+
+
+    /**
+     * 能否登陆
+     *
+     * @param vo
+     * @return
+     */
+    public boolean IsLogin(TeamVo vo)
+    {
+        TeamDao teamDao= DaoFactory.getTeamDao();
+        TeamPo teamPo = teamDao.findById(vo.getTeamAccount());
+        if (teamPo == null || !teamPo.getPassword().equals(vo.getPassword()))
+        {
+            return false;
+        } else
+        {
+            return true;
+        }
     }
 }

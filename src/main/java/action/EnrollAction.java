@@ -3,6 +3,8 @@ package action;
 import Service.TeamService;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import vo.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,14 +16,18 @@ import java.util.Map;
 /**
  * 队伍成员信息登记action
  */
+
 public class EnrollAction extends BaseAction
 {
+    @Autowired
+    TeamService service;
+
     @Override
     public String execute() throws Exception
     {
+        TeamService service=new TeamService();
         HttpServletRequest request = getRequest();
         Map<String,String[]> map=request.getParameterMap();
-        TeamService service=new TeamService();
 
         //添加领队
         TeamleaderVo teamleaderVo=new TeamleaderVo();
@@ -45,6 +51,7 @@ public class EnrollAction extends BaseAction
         final String age="playerAge";
         final String sex="sex";
         final String choose="checkbox";
+        final String group="playerGroup";
 
 
         for (int i=1;map.containsKey(name+i);i++)
@@ -55,6 +62,18 @@ public class EnrollAction extends BaseAction
             playerVo.setIdCard(map.get(id+i)[0]);
             playerVo.setAge(Integer.valueOf(map.get(age+i)[0]));
             playerVo.setSex(map.get(sex+i+"Option")[0]);
+            //根据年龄计算出年龄组比较好
+            int tempAge=Integer.valueOf(map.get(age+i)[0]);
+            if (tempAge<=8)
+            {
+                playerVo.setGroup("7-8岁组");
+            }else if (tempAge<=10)
+            {
+                playerVo.setGroup("9-10岁组");
+            }else
+            {
+                playerVo.setGroup("11-12岁组");
+            }
 
             //添加该运动员对应比赛项目。。。利用json储存
             String []temp=map.get(choose+i+"Option");
@@ -95,6 +114,6 @@ public class EnrollAction extends BaseAction
             judgerVo.setPhoneNum(map.get(Jtel+i)[0]);
             service.AddJudger(judgerVo);
         }
-        return "fail";
+        return "success";
     }
 }

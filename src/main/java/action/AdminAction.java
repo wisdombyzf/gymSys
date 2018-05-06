@@ -1,6 +1,7 @@
 package action;
 
 import Service.AdminService;
+import Service.PlayerService;
 import vo.AdminVo;
 import vo.TeamVo;
 
@@ -51,6 +52,22 @@ public class AdminAction extends BaseAction
         {
             return "fail";
         }
+    }
+
+
+    /**
+     * 确认报名阶段已结束，开始生成运动员编号，编排赛事
+     *
+     * @return
+     */
+    public String endEnroll()
+    {
+        PlayerService playerService=new PlayerService();
+        //生成运动员编号
+        playerService.setPlayerNum();
+        //编排赛赛
+        playerService.setGame();
+        return "success";
     }
 
     public void setUsername(String username)

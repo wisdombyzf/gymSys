@@ -3,14 +3,13 @@ package po;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "globematchrule", schema = "gaysys", catalog = "")
-public class GlobematchrulePo
+@Table(name = "rules", schema = "gaysys", catalog = "")
+public class RulesPo
 {
     private int teamPlayerPerGroup;
     private Integer playerPerMatch;
     private Integer playerCountInGroupScore;
 
-    @Basic
     @Id
     @Column(name = "TeamPlayerPerGroup", nullable = false)
     public int getTeamPlayerPerGroup()
@@ -24,7 +23,6 @@ public class GlobematchrulePo
     }
 
     @Basic
-    @Id
     @Column(name = "PlayerPerMatch", nullable = true)
     public Integer getPlayerPerMatch()
     {
@@ -37,7 +35,6 @@ public class GlobematchrulePo
     }
 
     @Basic
-    @Id
     @Column(name = "PlayerCountInGroupScore", nullable = true)
     public Integer getPlayerCountInGroupScore()
     {
@@ -55,12 +52,12 @@ public class GlobematchrulePo
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        GlobematchrulePo that = (GlobematchrulePo) o;
+        RulesPo rulesPo = (RulesPo) o;
 
-        if (teamPlayerPerGroup != that.teamPlayerPerGroup) return false;
-        if (playerPerMatch != null ? !playerPerMatch.equals(that.playerPerMatch) : that.playerPerMatch != null)
+        if (teamPlayerPerGroup != rulesPo.teamPlayerPerGroup) return false;
+        if (playerPerMatch != null ? !playerPerMatch.equals(rulesPo.playerPerMatch) : rulesPo.playerPerMatch != null)
             return false;
-        if (playerCountInGroupScore != null ? !playerCountInGroupScore.equals(that.playerCountInGroupScore) : that.playerCountInGroupScore != null)
+        if (playerCountInGroupScore != null ? !playerCountInGroupScore.equals(rulesPo.playerCountInGroupScore) : rulesPo.playerCountInGroupScore != null)
             return false;
 
         return true;

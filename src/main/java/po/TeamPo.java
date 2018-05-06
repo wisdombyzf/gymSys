@@ -60,6 +60,18 @@ public class TeamPo
         this.file = file;
     }
 
+    @Basic
+    @Column(name = "Score", nullable = true, precision = 0)
+    public Double getScore()
+    {
+        return score;
+    }
+
+    public void setScore(Double score)
+    {
+        this.score = score;
+    }
+
     @Override
     public boolean equals(Object o)
     {
@@ -72,6 +84,7 @@ public class TeamPo
         if (teamAccount != null ? !teamAccount.equals(teamPo.teamAccount) : teamPo.teamAccount != null) return false;
         if (password != null ? !password.equals(teamPo.password) : teamPo.password != null) return false;
         if (file != null ? !file.equals(teamPo.file) : teamPo.file != null) return false;
+        if (score != null ? !score.equals(teamPo.score) : teamPo.score != null) return false;
 
         return true;
     }
@@ -83,18 +96,7 @@ public class TeamPo
         result = 31 * result + (teamAccount != null ? teamAccount.hashCode() : 0);
         result = 31 * result + (password != null ? password.hashCode() : 0);
         result = 31 * result + (file != null ? file.hashCode() : 0);
+        result = 31 * result + (score != null ? score.hashCode() : 0);
         return result;
-    }
-
-    @Basic
-    @Column(name = "Score", nullable = true, precision = 0)
-    public Double getScore()
-    {
-        return score;
-    }
-
-    public void setScore(Double score)
-    {
-        this.score = score;
     }
 }

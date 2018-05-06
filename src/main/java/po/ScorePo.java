@@ -10,7 +10,7 @@ public class ScorePo
     private String matchId;
     private String judgeId;
     private String playerId;
-    private Integer score;
+    private Double score;
     private String scoreAccept;
 
     @Id
@@ -51,12 +51,12 @@ public class ScorePo
 
     @Basic
     @Column(name = "Score", nullable = true, precision = 0)
-    public Integer getScore()
+    public Double getScore()
     {
         return score;
     }
 
-    public void setScore(Integer score)
+    public void setScore(Double score)
     {
         this.score = score;
     }

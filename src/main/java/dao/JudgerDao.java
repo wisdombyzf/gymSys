@@ -1,7 +1,6 @@
 package dao;
 
 import po.JudgerPo;
-import po.TeamPo;
 
 import java.util.List;
 
