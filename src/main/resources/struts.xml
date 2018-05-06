@@ -70,8 +70,18 @@
             <result name="error">/login_admin.html</result>
         </action>
 
+        <!-- 管理员添加比赛规则信息 -->
+        <action name="set_rules" class="action.AdminAction" method="setRules">
+            <result name="success">/ruleSet.jsp</result>
+        </action>
+
         <!-- 管理员添加队伍 -->
         <action name="add_team" class="action.AddTeam" method="addTeam">
+            <result name="success">/team.jsp</result>
+        </action>
+
+        <!--管理员确认报名阶段已结束 -->
+        <action name="end_enroll" class="action.AdminAction" method="endEnroll">
             <result name="success">/team.jsp</result>
         </action>
 
@@ -91,7 +101,7 @@
         </action>
 
         <!-- 获取领队表 -->
-        <action name="get_leader" class="action.GetJSON" method="getAllCoach">
+        <action name="get_leader" class="action.GetJSON" method="getAllLeader">
             <result name="fail">/fail.jsp</result>
         </action>
 
@@ -100,6 +110,15 @@
             <result name="fail">/fail.jsp</result>
         </action>
 
+        <!-- 获取队伍表-->
+        <action name="get_team" class="action.GetJSON" method="getAllTeam">
+            <result name="fail">/fail.jsp</result>
+        </action>
+
+        <!-- 获取教练表 -->
+        <action name= "get_coach" class="action.GetJSON" method="getAllCoach">
+            <result name="fail">/fail.jsp</result>
+        </action>
 
     <action name="admin_lo*" class="action.AdminAction" method="login">
     <result name="fail">/fail.jsp</result>

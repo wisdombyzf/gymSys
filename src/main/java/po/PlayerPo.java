@@ -14,7 +14,7 @@ public class PlayerPo
     private String sex;
     private Double score;
     private String teamName;
-    private String group;
+    private String playerGroup;
 
     @Basic
     @Column(name = "player_id", nullable = false, length = 20)
@@ -114,14 +114,14 @@ public class PlayerPo
 
     @Basic
     @Column(name = "playerGroup", nullable = true, length = 255)
-    public String getGroup()
+    public String getPlayerGroup()
     {
-        return group;
+        return playerGroup;
     }
 
-    public void setGroup(String playerGroup)
+    public void setPlayerGroup(String playerGroup)
     {
-        this.group = playerGroup;
+        this.playerGroup = playerGroup;
     }
 
     @Override
@@ -140,7 +140,7 @@ public class PlayerPo
         if (sex != null ? !sex.equals(playerPo.sex) : playerPo.sex != null) return false;
         if (score != null ? !score.equals(playerPo.score) : playerPo.score != null) return false;
         if (teamName != null ? !teamName.equals(playerPo.teamName) : playerPo.teamName != null) return false;
-        if (group != null ? !group.equals(playerPo.group) : playerPo.group != null)
+        if (playerGroup != null ? !playerGroup.equals(playerPo.playerGroup) : playerPo.playerGroup != null)
             return false;
 
         return true;
@@ -157,7 +157,7 @@ public class PlayerPo
         result = 31 * result + (sex != null ? sex.hashCode() : 0);
         result = 31 * result + (score != null ? score.hashCode() : 0);
         result = 31 * result + (teamName != null ? teamName.hashCode() : 0);
-        result = 31 * result + (group != null ? group.hashCode() : 0);
+        result = 31 * result + (playerGroup != null ? playerGroup.hashCode() : 0);
         return result;
     }
 }

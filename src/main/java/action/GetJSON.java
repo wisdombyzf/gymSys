@@ -89,6 +89,48 @@ public class GetJSON extends BaseAction
     }
 
     /**
+     * 领队表
+     * @return
+     * @throws IOException
+     */
+    public String getAllLeader() throws IOException
+    {
+        PrintWriter out=ini();
+        TeamService service=new TeamService();
+        List<TeamleaderVo> vos =service.getTeamLeaderList();
+        JSONArray jsonArray=new JSONArray();
+        for (TeamleaderVo vo:vos)
+        {
+            jsonArray.add(vo);
+        }
+        out.print(jsonArray);
+        out.flush();
+        out.close();
+        return "fail";
+    }
+
+    /**
+     * 队伍表
+     * @return
+     * @throws IOException
+     */
+    public String getAllTeam() throws IOException
+    {
+        PrintWriter out=ini();
+        TeamService service=new TeamService();
+        List<TeamVo> vos =service.getTeamList();
+        JSONArray jsonArray=new JSONArray();
+        for (TeamVo vo:vos)
+        {
+            jsonArray.add(vo);
+        }
+        out.print(jsonArray);
+        out.flush();
+        out.close();
+        return "fail";
+    }
+
+    /**
      * 队医表
      * @return
      * @throws IOException
@@ -108,7 +150,5 @@ public class GetJSON extends BaseAction
         out.close();
         return "fail";
     }
-
-
 
 }

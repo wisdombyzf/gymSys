@@ -74,7 +74,7 @@
 <script>
   $(function () {
     $('#teamleader').bootstrapTable({
-      url: "http://"+window.location.hostname+"/GameAdmin/GetJSON?Table=TeamLeader",
+      url: "http://"+window.location.hostname+":8080/get_leader",
       clickEdit: true,
       pagination:true,
       search:true,
@@ -90,20 +90,20 @@
           field: 'state',
           checkbox:true,
       },{
-          field: 'pk',
+          field: 'id',
           title: '身份证号'
       }, {
-          field: 'fields.Name',
+          field: 'name',
           title: '姓名',
           sortable: true,
           editable:"input"
       }, {
-          field: 'fields.PhoneNum',
+          field: 'phoneNum',
           title: '电话',
           sortable: true,
           editable:"input"
       }, {
-          field: 'fields.TeamName',
+          field: 'teamName',
           title: '小队名称',
           sortable: true,
           editable:"input"

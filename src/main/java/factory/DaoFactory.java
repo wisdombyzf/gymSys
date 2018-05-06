@@ -2,6 +2,7 @@ package factory;
 
 import dao.*;
 import dao.impl.*;
+import org.aspectj.weaver.MemberImpl;
 
 public class DaoFactory
 {
@@ -53,5 +54,15 @@ public class DaoFactory
     public static ScoreDao getScroeDao()
     {
         return new ScoreDaoImpl();
+    }
+
+    public static MatchDao getMatchDao()
+    {
+        return new MatchDaoImpl();
+    }
+
+    public static PlayerMatchDao getPlayerMatchDao()
+    {
+        return new PlayerMatchDaoImpl();
     }
 }

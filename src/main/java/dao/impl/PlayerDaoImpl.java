@@ -31,5 +31,16 @@ public class PlayerDaoImpl extends BaseDaoImpl<PlayerPo> implements PlayerDao
           return findByHQL("from PlayerPo where teamName like '"+teamName+"'");
      }
 
+     /**
+      * 根据年龄组， 取得该年龄段的所有运动员列表
+      *
+      * @param group 年龄组
+      * @return
+      */
+     public List<PlayerPo> findByGroup(String group,String sex)
+     {
+          return findByHQL("from PlayerPo where playerGroup like '"+group+"' and sex like '"+sex+"'");
+     }
+
 
 }

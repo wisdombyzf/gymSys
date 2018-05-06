@@ -1,9 +1,13 @@
 package Service;
 
 import dao.GameDao;
+import dao.MatchDao;
 import dao.PlayerDao;
+import dao.PlayerMatchDao;
 import factory.DaoFactory;
 import po.GamePo;
+import po.MatchPo;
+import po.PlayerMatchPo;
 import po.PlayerPo;
 
 import java.io.Serializable;
@@ -65,6 +69,9 @@ public class PlayerService
     }
 
 
+
+
+
     /**
      * 设置比赛表
      *
@@ -72,10 +79,30 @@ public class PlayerService
      */
     public boolean setGame()
     {
-        List<PlayerPo> list = playerDao.getAllPlayerList();
+        setMatchByGroup("11-12岁组","男");
+        setMatchByGroup("11-12岁组","女");
 
-        Map<String,Integer> map= new HashMap<String, Integer>();
-        GameDao gameDao=DaoFactory.getGameDao();
+        setMatchByGroup("7-8岁组","男");
+        setMatchByGroup("7-8岁组","女");
+
+        setMatchByGroup("9-10岁组","男");
+        setMatchByGroup("9-10岁组","女");
+
+        return true;
+    }
+
+    /**
+     * 给某一年龄组的某一性别的运动员设置比赛表
+     *
+     * @param group
+     */
+    public void setMatchByGroup(String group,String sex)
+    {
+        List<PlayerPo> list = playerDao.findByGroup(group,sex);
+
+        Map<String,List<String>> event2id= new TreeMap<String, List<String>>();
+
+        //将运动员表分解,存入map
         for (PlayerPo po : list)
         {
             String id = po.getPlayerId();
@@ -85,30 +112,59 @@ public class PlayerService
                 temp = "";
             }
             String[] s = temp.split(",");
+
             for (String s1 : s)
             {
                 if (s1 != "")
                 {
-                    //TODO 以后再改
-                    GamePo gamePo=new GamePo();
-                    gamePo.setPlayerId(id);
-                    gamePo.setGameId(s1);
-
-                    int value=0;
-                    if (map.containsKey(s1))
+                    List<String> listTemp = event2id.get(s1);
+                    if(listTemp==null)
                     {
-                        value=map.get(s1)+1;
+                        listTemp=new LinkedList<String>();
                     }
-                    //TODO 此处3应为读取的设置常量
-                    gamePo.setGroups(String.valueOf(value%3));
-                    map.put(s1,value);
-                    gameDao.save(gamePo);
+                    listTemp.add(id);
+                    event2id.put(s1, listTemp);
                 }
             }
         }
-        return true;
-    }
 
+
+
+        Set<String> eventTemp = event2id.keySet();
+        for (String event:eventTemp)
+        {
+            List<String> playerIds = event2id.get(event);
+
+            //比赛id（年龄组+比赛类型event+第几组）
+            String MatchId=group+event+"0";
+            for (int i=0;i<playerIds.size();i++)
+            {
+                //TODO 此处5应为读取的teamPlayerPerGroup的值
+                //当人数凑够一组时，新建一组,存入match表
+                if (i%5==0)
+                {
+                    MatchDao matchDao=DaoFactory.getMatchDao();
+                    MatchPo matchPo=new MatchPo();
+                    MatchId=group+event+String.valueOf(i/5);
+                    matchPo.setMatchId(MatchId);
+                    matchPo.setPlayerGroup(group);
+                    matchPo.setEvent(event);
+                    matchPo.setSatrtTime("看天气");
+                    matchPo.setEndTime("看天气");
+                    matchDao.save(matchPo);
+                }
+
+                //存入playerMatch表
+                PlayerMatchDao playerMatchDao=DaoFactory.getPlayerMatchDao();
+                PlayerMatchPo po=new PlayerMatchPo();
+                po.setPlayerGroup(group);
+                po.setPlayerId(playerIds.get(i));
+                po.setMatchId(MatchId);
+                playerMatchDao.save(po);
+            }
+        }
+
+    }
 
 
 

@@ -1,6 +1,7 @@
 package dao.impl;
 
-import Service.PlayerService;
+import dao.PlayerDao;
+import factory.DaoFactory;
 import org.junit.Test;
 
 public class PlayerDaoImplTest
@@ -9,8 +10,7 @@ public class PlayerDaoImplTest
     @Test
     public void getPlayerList()
     {
-        PlayerService service=new PlayerService();
-        service.getGamelist("SG");
-
+        PlayerDao dao= DaoFactory.getPlayerDao();
+        //List<PlayerPo> temp = dao.findByGroup("11-12岁组");
     }
 }

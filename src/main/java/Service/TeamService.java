@@ -189,6 +189,33 @@ public class TeamService
     }
 
     /**
+     * 获取领队列表
+     * @return
+     */
+    public List<TeamleaderVo> getTeamLeaderList()
+    {
+        TeamLeaderDao  dao = DaoFactory.getLeaderDao();
+        List<TeamleaderPo> pos=dao.getAllLeaderList();
+        List<TeamleaderVo> vos=new ArrayList<TeamleaderVo>();
+        for (TeamleaderPo po:pos)
+        {
+            try
+            {
+                TeamleaderVo vo=new TeamleaderVo();
+                BeanUtils.copyProperties(vo,po);
+                vos.add(vo);
+            } catch (IllegalAccessException e)
+            {
+                e.printStackTrace();
+            } catch (InvocationTargetException e)
+            {
+                e.printStackTrace();
+            }
+        }
+        return vos;
+    }
+
+    /**
      * 获取教练列表
      * @return
      */
@@ -214,6 +241,35 @@ public class TeamService
         }
         return vos;
     }
+
+    /**
+     * 获取所有队伍
+     * @return
+     */
+    public List<TeamVo> getTeamList()
+    {
+        TeamDao  dao = DaoFactory.getTeamDao();
+        List<TeamPo> pos=dao.getAllTeamList();
+        List<TeamVo> vos=new ArrayList<TeamVo>();
+        for (TeamPo po:pos)
+        {
+            try
+            {
+                TeamVo vo=new TeamVo();
+                BeanUtils.copyProperties(vo,po);
+                vos.add(vo);
+            } catch (IllegalAccessException e)
+            {
+                e.printStackTrace();
+            } catch (InvocationTargetException e)
+            {
+                e.printStackTrace();
+            }
+        }
+        return vos;
+    }
+
+
 
     /**
      * 获取所有队医
@@ -271,6 +327,8 @@ public class TeamService
         return vos;
     }
 
+
+
     /**
      * 计算团体总成绩
      * @return
@@ -312,4 +370,6 @@ public class TeamService
             return true;
         }
     }
+
+
 }

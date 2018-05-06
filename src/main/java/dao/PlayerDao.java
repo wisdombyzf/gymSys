@@ -14,10 +14,17 @@ public interface PlayerDao extends BaseDao<PlayerPo>
     List<PlayerPo> getAllPlayerList();
 
     /**
-     * 取得该队的所有运动员列表
+     * 根据队名， 取得该队的所有运动员列表
      * @param teamName 队名
      * @return
      */
-    public List<PlayerPo> findByTeamName(String teamName);
+    List<PlayerPo> findByTeamName(String teamName);
+
+    /**
+     * 根据年龄组， 取得该年龄段的所有运动员列表
+     * @param group 年龄组
+     * @return
+     */
+    List<PlayerPo> findByGroup(String group,String sex);
 
 }

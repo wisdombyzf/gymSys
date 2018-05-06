@@ -78,7 +78,7 @@
 <script>
   $(function () {
     $('#team').bootstrapTable({
-      url: "http://"+window.location.hostname+"/GameAdmin/GetJSON?Table=Team",
+      url: "http://"+window.location.hostname+":8080/get_team",
       clickEdit: true,
       pagination:true,
       search:true,
@@ -94,15 +94,15 @@
           field: 'state',
           checkbox:true,
       },{
-          field: 'pk',
+          field: 'teamName',
           title: '小队姓名'
       }, {
-          field: 'fields.TeamAccount',
+          field: 'teamAccount',
           title: '账号',
           sortable: true,
           editable:"input"
       }, {
-          field: 'fields.Password',
+          field: 'password',
           title: '密码',
           sortable: true,
           editable:"input"

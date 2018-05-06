@@ -53,6 +53,9 @@
             </a>
             <ul class="treeview-menu">
                 <li><a href="Match"><i class="fa fa-circle-o"></i> 比赛</a></li>
+                <li><a href="endEnroll.jsp"><i class="fa fa-circle-o"></i> 结束报名阶段 </a></li>
+                <li><a href="ruleSet.jsp"><i class="fa fa-circle-o"></i> 比赛规则设置 </a></li>
+
             </ul>
         </li>
 

@@ -79,7 +79,7 @@
 
   $(function () {
     $('#teamcoach').bootstrapTable({
-      url: "http://"+window.location.hostname+":8080/get_juger",
+      url: "http://"+window.location.hostname+":8080/get_coach",
       clickEdit: true,
       pagination:true,
       search:true,
@@ -95,25 +95,25 @@
           field: 'state',
           checkbox:true,
       },{
-          field: 'pk',
+          field: 'id',
           title: '身份证号'
       }, {
-          field: 'fields.Name',
+          field: 'fname',
           title: '姓名',
           sortable: true,
           editable:"input"
       }, {
-          field: 'fields.PhoneNum',
+          field: 'phoneNum',
           title: '电话',
           sortable: true,
           editable:"input"
       }, {
-          field: 'fields.Gender',
+          field: 'gender',
           title: '性别',
           sortable: true,
           editable:"select"
       }, {
-          field: 'fields.TeamName',
+          field: 'teamName',
           title: '小队名称',
           sortable: true,
           editable:"input"

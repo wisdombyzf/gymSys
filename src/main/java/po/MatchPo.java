@@ -1,18 +1,17 @@
 package po;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
 
 @Entity
 @Table(name = "match", schema = "gaysys", catalog = "")
 public class MatchPo
 {
     private String matchId;
-    private String group;
+    private String playerGroup;
     private String event;
     private String chiefId;
-    private Timestamp satrtTime;
-    private Timestamp endTime;
+    private String satrtTime;
+    private String endTime;
     private String matchStatus;
     private Integer matchType;
     private String subGroup;
@@ -30,15 +29,15 @@ public class MatchPo
     }
 
     @Basic
-    @Column(name = "Group", nullable = true, length = 255)
-    public String getGroup()
+    @Column(name = "playerGroup", nullable = true, length = 255)
+    public String getPlayerGroup()
     {
-        return group;
+        return playerGroup;
     }
 
-    public void setGroup(String group)
+    public void setPlayerGroup(String playerGroup)
     {
-        this.group = group;
+        this.playerGroup = playerGroup;
     }
 
     @Basic
@@ -66,25 +65,25 @@ public class MatchPo
     }
 
     @Basic
-    @Column(name = "SatrtTime", nullable = true)
-    public Timestamp getSatrtTime()
+    @Column(name = "SatrtTime", nullable = true, length = 255)
+    public String getSatrtTime()
     {
         return satrtTime;
     }
 
-    public void setSatrtTime(Timestamp satrtTime)
+    public void setSatrtTime(String satrtTime)
     {
         this.satrtTime = satrtTime;
     }
 
     @Basic
-    @Column(name = "EndTime", nullable = true)
-    public Timestamp getEndTime()
+    @Column(name = "EndTime", nullable = true, length = 255)
+    public String getEndTime()
     {
         return endTime;
     }
 
-    public void setEndTime(Timestamp endTime)
+    public void setEndTime(String endTime)
     {
         this.endTime = endTime;
     }
@@ -134,7 +133,7 @@ public class MatchPo
         MatchPo matchPo = (MatchPo) o;
 
         if (matchId != null ? !matchId.equals(matchPo.matchId) : matchPo.matchId != null) return false;
-        if (group != null ? !group.equals(matchPo.group) : matchPo.group != null) return false;
+        if (playerGroup != null ? !playerGroup.equals(matchPo.playerGroup) : matchPo.playerGroup != null) return false;
         if (event != null ? !event.equals(matchPo.event) : matchPo.event != null) return false;
         if (chiefId != null ? !chiefId.equals(matchPo.chiefId) : matchPo.chiefId != null) return false;
         if (satrtTime != null ? !satrtTime.equals(matchPo.satrtTime) : matchPo.satrtTime != null) return false;
@@ -150,7 +149,7 @@ public class MatchPo
     public int hashCode()
     {
         int result = matchId != null ? matchId.hashCode() : 0;
-        result = 31 * result + (group != null ? group.hashCode() : 0);
+        result = 31 * result + (playerGroup != null ? playerGroup.hashCode() : 0);
         result = 31 * result + (event != null ? event.hashCode() : 0);
         result = 31 * result + (chiefId != null ? chiefId.hashCode() : 0);
         result = 31 * result + (satrtTime != null ? satrtTime.hashCode() : 0);

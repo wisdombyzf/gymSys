@@ -9,7 +9,7 @@ public class PlayerMatchPo
 {
     private String playerId;
     private String matchId;
-    private String groups;
+    private String playerGroup;
     private String playerName;
     private String dScore;
     private String pScore;
@@ -41,15 +41,15 @@ public class PlayerMatchPo
     }
 
     @Basic
-    @Column(name = "groups", nullable = true, length = 255)
-    public String getGroups()
+    @Column(name = "playerGroup", nullable = true, length = 255)
+    public String getPlayerGroup()
     {
-        return groups;
+        return playerGroup;
     }
 
-    public void setGroups(String groups)
+    public void setPlayerGroup(String playerGroup)
     {
-        this.groups = groups;
+        this.playerGroup = playerGroup;
     }
 
     @Basic
@@ -122,7 +122,7 @@ public class PlayerMatchPo
 
         if (playerId != null ? !playerId.equals(that.playerId) : that.playerId != null) return false;
         if (matchId != null ? !matchId.equals(that.matchId) : that.matchId != null) return false;
-        if (groups != null ? !groups.equals(that.groups) : that.groups != null) return false;
+        if (playerGroup != null ? !playerGroup.equals(that.playerGroup) : that.playerGroup != null) return false;
         if (playerName != null ? !playerName.equals(that.playerName) : that.playerName != null) return false;
         if (dScore != null ? !dScore.equals(that.dScore) : that.dScore != null) return false;
         if (pScore != null ? !pScore.equals(that.pScore) : that.pScore != null) return false;
@@ -137,7 +137,7 @@ public class PlayerMatchPo
     {
         int result = playerId != null ? playerId.hashCode() : 0;
         result = 31 * result + (matchId != null ? matchId.hashCode() : 0);
-        result = 31 * result + (groups != null ? groups.hashCode() : 0);
+        result = 31 * result + (playerGroup != null ? playerGroup.hashCode() : 0);
         result = 31 * result + (playerName != null ? playerName.hashCode() : 0);
         result = 31 * result + (dScore != null ? dScore.hashCode() : 0);
         result = 31 * result + (pScore != null ? pScore.hashCode() : 0);

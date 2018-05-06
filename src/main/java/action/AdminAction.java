@@ -3,6 +3,7 @@ package action;
 import Service.AdminService;
 import Service.PlayerService;
 import vo.AdminVo;
+import vo.RulesVo;
 import vo.TeamVo;
 
 public class AdminAction extends BaseAction
@@ -14,6 +15,9 @@ public class AdminAction extends BaseAction
     private String teampassword;
     private String file;
 
+    private int teamPlayerPerGroup;
+    private Integer playerPerMatch;
+    private Integer playerCountInGroupScore;
 
     /**
      * 登陆
@@ -70,6 +74,23 @@ public class AdminAction extends BaseAction
         return "success";
     }
 
+
+    /**
+     * 比赛规则设置
+     * @return
+     */
+    public String setRules()
+    {
+        AdminService service=new AdminService();
+        RulesVo vo=new RulesVo();
+        vo.setTeamPlayerPerGroup(teamPlayerPerGroup);
+        vo.setPlayerPerMatch(playerPerMatch);
+        vo.setPlayerCountInGroupScore(playerCountInGroupScore);
+        service.setRules(vo);
+        return "success";
+    }
+
+
     public void setUsername(String username)
     {
         this.username = username;
@@ -98,5 +119,20 @@ public class AdminAction extends BaseAction
     public void setFile(String file)
     {
         this.file = file;
+    }
+
+    public void setTeamPlayerPerGroup(int teamPlayerPerGroup)
+    {
+        this.teamPlayerPerGroup = teamPlayerPerGroup;
+    }
+
+    public void setPlayerPerMatch(Integer playerPerMatch)
+    {
+        this.playerPerMatch = playerPerMatch;
+    }
+
+    public void setPlayerCountInGroupScore(Integer playerCountInGroupScore)
+    {
+        this.playerCountInGroupScore = playerCountInGroupScore;
     }
 }
