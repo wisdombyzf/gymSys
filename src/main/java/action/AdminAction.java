@@ -59,6 +59,21 @@ public class AdminAction extends BaseAction
     }
 
 
+
+    /**
+     * 删除比赛队伍信息
+     * @return
+     */
+    public String DeleteTeam()
+    {
+        AdminService service= new AdminService();
+        TeamVo vo=new TeamVo();
+        vo.setTeamAccount(teamAccount);
+        service.DeleteTeam(vo);
+        return "success";
+    }
+
+
     /**
      * 确认报名阶段已结束，开始生成运动员编号，编排赛事
      *
@@ -89,6 +104,7 @@ public class AdminAction extends BaseAction
         service.setRules(vo);
         return "success";
     }
+
 
 
     public void setUsername(String username)

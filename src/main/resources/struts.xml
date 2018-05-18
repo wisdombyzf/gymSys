@@ -6,51 +6,6 @@
 <!-- 原来idea 只编译resources文件夹下的配置文件。。。。难怪编译好的xml文件没有更新-->
 
 
-<!--<struts>-->
-    <!--<package name="default" namespace="/" extends="struts-default">-->
-
-        <!--<action name="login" class="action.LoginAction">-->
-            <!--<result name="success">/success.jsp</result>-->
-        <!--</action>-->
-
-        <!--<action name="admin_lo*" class="action.AdminAction" method="login">-->
-            <!--<result name="fail">/fail.jsp</result>-->
-            <!--<result name="success">/success.jsp</result>-->
-        <!--</action>-->
-        <!--<action name="admin_addTeam" class="action.AdminAction" method="AddTeam">-->
-            <!--<result name="fail">/fail.jsp</result>-->
-            <!--<result name="success">/success.jsp</result>-->
-        <!--</action>-->
-
-        <!--<action name="add_player" class="action.TeamAction" method="AddPlayer">-->
-            <!--<result name="fail">/fail.jsp</result>-->
-            <!--<result name="success">/success.jsp</result>-->
-        <!--</action>-->
-
-        <!--<action name="Enroll" class="action.EnrollAction">-->
-            <!--<result name="fail">/fail.jsp</result>-->
-            <!--<result name="success">/success.jsp</result>-->
-        <!--</action>-->
-        <!--<action name="get_player" class="action.GetJSON" method="getAllPlayer">-->
-            <!--<result name="fail">/fail.jsp</result>-->
-        <!--</action>-->
-        <!--&lt;!&ndash;文件上传 &ndash;&gt;-->
-        <!--<action name="upload" class="action.UploadAction" method="upload">-->
-        <!--</action>-->
-
-        <!--<action name="get_coach" class="action.GetJSON" method="getAllCoach">-->
-            <!--<result name="fail">/fail.jsp</result>-->
-        <!--</action>-->
-
-        <!--<action name="get_judger" class="action.GetJSON" method="getAllJudger">-->
-            <!--<result name="fail">/fail.jsp</result>-->
-        <!--</action>-->
-    <!--</package>-->
-
-
-<!--</struts>-->
-
-
 <!--添加spring后-->
 <struts>
 
@@ -61,13 +16,19 @@
 
         <!--普通用户登陆-->
         <action name="login" class="action.LoginAction" method="loginNomal">
-            <result name="success">Enroll.html</result>
+            <result name="success">Enroll.jsp</result>
             <result name="error">login.html</result>
         </action>
         <!--管理员登陆-->
         <action name="loginAdmin" class="action.LoginAction" method="loginAdamin">
-            <result name="success">/team.jsp</result>
+            <result name="success">/admin.jsp</result>
             <result name="error">/login_admin.html</result>
+        </action>
+
+        <!-- 裁判员登陆 -->
+        <action name="login_judger" class="action.LoginAction" method="loginJudger">
+            <result name="success">/judgerIndex.jsp</result>
+            <result name="error">/login_judger.html</result>
         </action>
 
         <!-- 管理员添加比赛规则信息 -->
@@ -75,19 +36,29 @@
             <result name="success">/ruleSet.jsp</result>
         </action>
 
+        <!-- 管理员获取比赛规则信息 -->
+        <action name="get_rules" class="action.GetJSON" method="getRules">
+            <result name="success">/ruleSet.jsp</result>
+        </action>
+
         <!-- 管理员添加队伍 -->
         <action name="add_team" class="action.AddTeam" method="addTeam">
-            <result name="success">/team.jsp</result>
+            <result name="success">/admin.jsp</result>
+        </action>
+
+        <!-- 管理员删除队伍 -->
+        <action name="delete_team" class="action.AdminAction" method="DeleteTeam">
+            <result name="success">/admin.jsp</result>
         </action>
 
         <!--管理员确认报名阶段已结束 -->
         <action name="end_enroll" class="action.AdminAction" method="endEnroll">
-            <result name="success">/team.jsp</result>
+            <result name="success">/admin.jsp</result>
         </action>
 
         <!-- 领队添加队伍信息 -->
         <action name="Enroll" class="action.EnrollAction">
-            <result name="success">Enroll.html</result>
+            <result name="success">Enroll.jsp</result>
         </action>
 
         <!-- 获取运动员表 -->
@@ -120,6 +91,7 @@
             <result name="fail">/fail.jsp</result>
         </action>
 
+        <!-- websocket 连接 -->
     <action name="admin_lo*" class="action.AdminAction" method="login">
     <result name="fail">/fail.jsp</result>
     <result name="success">/success.jsp</result>

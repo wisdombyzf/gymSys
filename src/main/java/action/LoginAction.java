@@ -1,12 +1,14 @@
 package action;
 
 import Service.AdminService;
+import Service.JudgeService;
 import Service.TeamService;
 import com.opensymphony.xwork2.ActionSupport;
 import jdk.nashorn.internal.objects.NativeNumber;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import vo.AdminVo;
+import vo.JudgerVo;
 import vo.TeamVo;
 
 import javax.servlet.http.HttpSession;
@@ -71,6 +73,28 @@ public class LoginAction extends BaseAction
     }
 
 
+    /**
+     * 裁判员登陆
+     * @return
+     * @throws Exception
+     */
+    public String loginJudger() throws Exception
+    {
+        JudgeService service=new JudgeService();
+        JudgerVo vo=new JudgerVo();
+        vo.setJudgeAccount(username);
+        vo.setPassword(password);
+        if (service.IsJudger(vo))
+        {
+            HttpSession session=getSession();
+            session.setAttribute("judger",vo);
+            return "success";
+        }else
+        {
+            return "error";
+        }
+    }
+
 
     public void setUsername(String username)
     {
@@ -81,4 +105,6 @@ public class LoginAction extends BaseAction
     {
         this.password = password;
     }
+
+
 }

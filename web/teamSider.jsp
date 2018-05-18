@@ -44,6 +44,7 @@
                 <li><a href="team.jsp"><i class="fa fa-circle-o"></i>参赛队伍表</a></li>
             </ul>
         </li>
+
         <li class="treeview">
             <a href="#">
                 <i class="fa fa-table"></i> <span>赛事安排</span>

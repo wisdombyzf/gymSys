@@ -15,6 +15,7 @@ import vo.RulesVo;
 import vo.TeamVo;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 
 /**
  * 管理员服务类
@@ -64,7 +65,6 @@ public class AdminService
         TeamDao teamDao=DaoFactory.getTeamDao();
         TeamPo teamPo = new TeamPo();
 
-        //TODO po转vo待定   暂时直接暴力
         teamPo.setTeamName(vo.getTeamName());
         teamPo.setTeamAccount(vo.getTeamAccount());
         teamPo.setPassword(vo.getPassword());
@@ -73,6 +73,22 @@ public class AdminService
         teamDao.save(teamPo);
         return true;
     }
+
+
+    /**
+     * 管理员删除队伍信息
+     *
+     * @param vo
+     * @return
+     */
+    public boolean DeleteTeam(TeamVo vo)
+    {
+
+        TeamDao teamDao=DaoFactory.getTeamDao();
+        teamDao.delete(vo.getTeamName());
+        return true;
+    }
+
 
     /**
      * 管理员设定比赛规则
@@ -97,5 +113,27 @@ public class AdminService
     }
 
 
+    /**
+     * 管理员获取比赛规则
+     * @return
+     */
+    public RulesVo getRules()
+    {
+        RulesDao dao=DaoFactory.getRulesDao();
+        List<RulesPo> pos = dao.getAllRule();
+        RulesPo po = pos.get(0);
+        RulesVo vo=new RulesVo();
+        try
+        {
+            BeanUtils.copyProperties(vo, po);
+        } catch (IllegalAccessException e)
+        {
+            e.printStackTrace();
+        } catch (InvocationTargetException e)
+        {
+            e.printStackTrace();
+        }
+        return vo;
+    }
 
 }

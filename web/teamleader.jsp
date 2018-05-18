@@ -35,13 +35,13 @@
           <div class="box">
             <div class="box-body">
               <div id="toolbar">
-                  <button id="delete" class="btn btn-danger">删除</button>
-                  <button id="create" 
-                  class="btn btn-default"
-                  data-toggle="modal" 
-                  data-target="#exampleModal">
-                  添加
-                  </button>
+                  <%--<button id="delete" class="btn btn-danger">删除</button>--%>
+                  <%--<button id="create" --%>
+                  <%--class="btn btn-default"--%>
+                  <%--data-toggle="modal" --%>
+                  <%--data-target="#exampleModal">--%>
+                  <%--添加--%>
+                  <%--</button>--%>
               </div>
               <table id="teamleader" class="table table-bordered table-striped">
               </table>

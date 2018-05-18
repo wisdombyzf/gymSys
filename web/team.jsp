@@ -41,7 +41,15 @@
           <div class="box">
             <div class="box-body">
               <div id="toolbar">
-                  <button id="delete" class="btn btn-danger">删除</button>
+
+
+                <button id="delete"
+                        class="btn btn-default"
+                        data-toggle="modal"
+                        data-target="#exampleModa2">
+                  删除
+                </button>
+
                   <button id="create" 
                   class="btn btn-default"
                   data-toggle="modal" 
@@ -142,7 +150,6 @@
       </div>
       <div class="modal-body">
         <div class="container-fluid" style="padding-right: 0px;padding-left: 0px;">
-
         <form class="form-horizontal" method="post" action="add_team.action">
           <div class="form-group" style="display:none">
             <label for="Type" class="control-label col-sm-4">操作类型</label>
@@ -154,7 +161,7 @@
           </div>
           <div class="form-group">
             <label for="TeamName" class="control-label col-sm-4">小队名称</label>
-            <div class="col-sm-6"><input required type="text" class="form-control input-md" id="TeamName" name="TeamName"></div>
+            <div class="col-sm-6"><input required type="text" class="form-control input-md" id="teamName" name="TeamName"></div>
           </div>
           <div class="form-group">
             <label for="TeamAccount" class="control-label col-sm-4">账号</label>
@@ -169,6 +176,41 @@
             <div class="col-xs-6"><button type="button" class="btn btn-default" data-dismiss="modal">取消</button></div>
           </div>
         </form>
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 删除队伍记录 -->
+<div class="modal fade" id="exampleModa2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">添加记录</h4>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid" style="padding-right: 0px;padding-left: 0px;">
+          <form class="form-horizontal" method="post" action="delete_team.action">
+            <div>
+              <label for="TeamName" class="control-label col-sm-4">将要删除的小队名称</label>
+              <div class="col-sm-6"><input required type="text" class="form-control input-md" id="teamName" name="teamName"></div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-xs-6"><button type="submit" class="btn btn-primary pull-right">确认删除</div>
+              <div class="col-xs-6"><button type="button" class="btn btn-default" data-dismiss="modal">取消</button></div>
+            </div>
+          </form>
+
+
+
+
         </div>
       </div>
     </div>

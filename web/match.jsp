@@ -1,9 +1,10 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>及讯</title>
+  <title>赛事安排页面</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -114,24 +115,26 @@
             </span>
 		      </a>
           <ul class="treeview-menu">
-            <li><a href="Player"><i class="fa fa-circle-o"></i>运动员表</a></li>
-            <li><a href="Judge"><i class="fa fa-circle-o"></i>裁判表</a></li>
-            <li><a href="TeamMedic"><i class="fa fa-circle-o"></i>队医表</a></li>
-            <li><a href="TeamCoach"><i class="fa fa-circle-o"></i>教练表</a></li>
-            <li><a href="TeamLeader"><i class="fa fa-circle-o"></i>领队表</a></li>
+              <li><a href="player.jsp"><i class="fa fa-circle-o"></i>运动员表</a></li>
+              <li><a href="teamjudge.jsp"><i class="fa fa-circle-o"></i>裁判表</a></li>
+              <li><a href="teammedic.jsp"><i class="fa fa-circle-o"></i>队医表</a></li>
+              <li><a href="teamcoach.jsp"><i class="fa fa-circle-o"></i>教练表</a></li>
+              <li><a href="teamleader.jsp"><i class="fa fa-circle-o"></i>领队表</a></li>
           </ul>
         </li>
-        <li class="treeview">
-          <a href="Match">
-            <i class="fa fa-flag"></i> <span>参赛队伍</span>
-            <span class="pull-right-container">
+          <li class="active treeview">
+              <a href="Match">
+                  <i class="fa fa-flag"></i> <span>参赛队伍</span>
+                  <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
             </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="Team"><i class="fa fa-circle-o"></i>参赛队伍表</a></li>
-          </ul>
-        </li>
+              </a>
+              <ul class="treeview-menu">
+                  <li><a href="team.jsp"><i class="fa fa-circle-o"></i>参赛队伍表</a></li>
+              </ul>
+          </li>
+
+
         <li class="active treeview">
           <a href="#">
             <i class="fa fa-table"></i> <span>赛事安排</span>
@@ -151,6 +154,10 @@
     </section>
     <!-- /.sidebar -->
   </aside>
+
+
+
+
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -213,46 +220,46 @@
               <h4>赛事表</h4>
               <br/>
               <div id="toolbar">
-                  <button id="delete" class="btn btn-danger">删除</button>
-                  <button id="create" class="btn btn-default" data-toggle="modal" data-target="#Modal-Match">
-                  添加
-                  </button>
-                  <button id="startgame" class="btn btn-primary">开始比赛</button>
-                  <button id="details" class="btn btn-info">详细</button>
-                  <button id="generatefinal" class="btn btn-danger">安排决赛</button>
+                  <%--<button id="delete" class="btn btn-danger">删除</button>--%>
+                  <%--<button id="create" class="btn btn-default" data-toggle="modal" data-target="#Modal-Match">--%>
+                  <%--添加--%>
+                  <%--</button>--%>
+                  <%--<button id="startgame" class="btn btn-primary">开始比赛</button>--%>
+                  <%--<button id="details" class="btn btn-info">详细</button>--%>
+                  <%--<button id="generatefinal" class="btn btn-danger">安排决赛</button>--%>
               </div>
               <table id="match" class="table table-bordered table-striped">
               </table>
               </div>
             </div>
 
-          <div class="box box-info">
-              <div class="box-body"> 
-                <div class="col-xs-6">
-                  <h4 id="title-score">打分表</h4>
-                <table id="score" class="table table-bordered table-striped">
-                </table>
-                </div>
-            
-                <div class="col-xs-6">
-                    <h4 id="title-matchjudge">裁判表</h4>
-                  <table id="matchjudge" class="table table-bordered table-striped">
-                  </table>
-                </div>
-              </div>
-          </div>
-          
-          <div class="box box-info">
-            <div class="box-body"> 
-              <div class="col-xs-12">
-                  <h4 id="title-playmatch">得分表</h4>
-                  <div id="toolbar-playmatch"><button class="btn btn-danger" id="start-score">开始打分</button></div>
-                  <table id="playmatch" class="table table-bordered table-striped">
-                  </table>
-              </div>
-            </div>
-            <!-- /.box-body -->
-          </div>
+          <%--<div class="box box-info">--%>
+              <%--<div class="box-body"> --%>
+                <%--<div class="col-xs-6">--%>
+                  <%--<h4 id="title-score">打分表</h4>--%>
+                <%--<table id="score" class="table table-bordered table-striped">--%>
+                <%--</table>--%>
+                <%--</div>--%>
+            <%----%>
+                <%--<div class="col-xs-6">--%>
+                    <%--<h4 id="title-matchjudge">裁判表</h4>--%>
+                  <%--<table id="matchjudge" class="table table-bordered table-striped">--%>
+                  <%--</table>--%>
+                <%--</div>--%>
+              <%--</div>--%>
+          <%--</div>--%>
+          <%----%>
+          <%--<div class="box box-info">--%>
+            <%--<div class="box-body"> --%>
+              <%--<div class="col-xs-12">--%>
+                  <%--<h4 id="title-playmatch">得分表</h4>--%>
+                  <%--<div id="toolbar-playmatch"><button class="btn btn-danger" id="start-score">开始打分</button></div>--%>
+                  <%--<table id="playmatch" class="table table-bordered table-striped">--%>
+                  <%--</table>--%>
+              <%--</div>--%>
+            <%--</div>--%>
+            <%--<!-- /.box-body -->--%>
+          <%--</div>--%>
           <!-- /.box -->
         </div>
         <!-- /.col -->
@@ -303,16 +310,16 @@
   var $table = $('#match');
   $(function () {
       $('#rule').bootstrapTable({
-        url: "http://"+window.location.hostname+"/GameAdmin/GetJSON?Table=GlobeMatchRule",
+        url: "http://"+window.location.hostname+":8080/get_rules",
         uniqueId:"GlobeMatchRule",
         columns: [ {
-          field: 'fields.TeamPlayerPerGroup',
+          field: 'teamPlayerPerGroup',
           title: 'TeamPlayerPerGroup'
         }, {
-          field: 'fields.PlayerPerMatch',
+          field: 'playerPerMatch',
           title: 'PlayerPerMatch'
         }, {
-          field: 'fields.PlayerCountInGroupScore',
+          field: 'playerCountInGroupScore',
           title: 'PlayerCountInGroupScore'
         }],
         responseHandler: function (res) {

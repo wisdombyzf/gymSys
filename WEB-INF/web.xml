@@ -15,16 +15,25 @@
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
 
+
     <!-- 添加对struts2的支持 -->
     <filter>
         <filter-name>struts2</filter-name>
         <filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter</filter-class>
     </filter>
 
+
     <filter-mapping>
         <filter-name>struts2</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+    <!--<filter-mapping>-->
+        <!--<filter-name>struts2</filter-name>-->
+        <!--<url-pattern>/get*</url-pattern>-->
+    <!--</filter-mapping>-->
+
+
 
     <!-- Session延迟加载到页面  -->
     <filter>
@@ -42,6 +51,13 @@
     </filter-mapping>
 
 
+
+
+    <!-- 启动websocket -->
+    <!--<listener>-->
+        <!--<listener-class>websocket.ContextReporter</listener-class>-->
+    <!--</listener>-->
+
     <!--
     <filter>
         <filter-name>struts2</filter-name>
@@ -52,7 +68,7 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
     <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>admin.jsp</welcome-file>
     </welcome-file-list>
     -->
 </web-app>

@@ -1,5 +1,6 @@
 package action;
 
+import Service.AdminService;
 import Service.TeamService;
 import net.sf.json.JSONArray;
 import vo.*;
@@ -145,6 +146,24 @@ public class GetJSON extends BaseAction
         {
             jsonArray.add(vo);
         }
+        out.print(jsonArray);
+        out.flush();
+        out.close();
+        return "fail";
+    }
+
+    /**
+     * 比赛规则获取
+     * @return
+     */
+    public String getRules() throws IOException
+    {
+        PrintWriter out=ini();
+        AdminService service=new AdminService();
+        RulesVo vo=service.getRules();
+
+        JSONArray jsonArray=new JSONArray();
+        jsonArray.add(vo);
         out.print(jsonArray);
         out.flush();
         out.close();

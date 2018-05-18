@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿<%@ page language="java" pageEncoding="utf-8"%>
+
+<!DOCTYPE html>
 <html>
 <head>
 
@@ -554,98 +556,14 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="refresh" content="10">
-  <title>及讯</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.7 -->
-     <link rel="stylesheet" href="/master/bower_components/bootstrap/dist/css/bootstrap.min.css" >
-  <!-- Font Awesome -->
-     <link rel="stylesheet" href="/master/bower_components/font-awesome/css/font-awesome.min.css" >
-  <!-- Ionicons -->
-     <link rel="stylesheet" href="/master/bower_components/Ionicons/css/ionicons.min.css" >
-  <!-- Theme style -->
-     <link rel="stylesheet" href="/master/dist/css/AdminLTE.min.css" >
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-     <link rel="stylesheet" href="/master/dist/css/skins/skin-blue.min.css" >
-  <!-- Morris chart -->
-     <link rel="stylesheet" href="/master/bower_components/morris.js/morris.css" >
-  <!-- jvectormap -->
-     <link rel="stylesheet" href="/master/bower_components/jvectormap/jquery-jvectormap.css" >
-  <!-- Date Picker -->
-     <link rel="stylesheet" href="/master/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" >
-  <!-- Daterange picker -->
-     <link rel="stylesheet" href="/master/bower_components/bootstrap-daterangepicker/daterangepicker.css" >
-  <!-- bootstrap wysihtml5 - text editor -->
-     <link rel="stylesheet" href="/master/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" >
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
-  <!-- Google Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-</head>
-
+  <title>裁判员主页</title>
+  </head>
+  <jsp:include page="Common_css_js.jsp"></jsp:include>
 
 <body class="hold-transition skin-blue sidebar-mini" onload="idle()">
 <div class="wrapper">
 
-  <header class="main-header">
-    <!-- Logo -->
-    <a href="." class="logo">
-          <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>及讯</b></span>
-          <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>及讯</b><small>赛事管理系统</small></span>
-    </a>
-    <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top">
-      <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-      </a>
-
-      <div class="navbar-custom-menu">
-            <ul class="nav navbar-nav">
-              <!-- User Account: style can be found in dropdown.less -->
-              <li class="dropdown user user-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="/master/dist/img/user2-160x160.jpg"  class="user-image" alt="User Image">
-                  <span class="hidden-xs">裁判</span>
-                </a>
-                <ul class="dropdown-menu">
-                  <!-- User image -->
-                  <li class="user-header">
-                    <img src="/master/dist/img/user2-160x160.jpg"  class="img-circle" alt="User Image">
-
-                    <p>
-                      裁判 - Web Developer
-                      <small>Member since Nov. 2012</small>
-                    </p>
-                  </li>
-                  <!-- Menu Footer-->
-                  <li class="user-footer">
-                    <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat">用户</a>
-                    </div>
-                    <div class="pull-right">
-                      <a href="LogoutJudge" class="btn btn-default btn-flat">登出</a>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-
-    </nav>
-  </header>
+  <jsp:include page="teamHeader.jsp"></jsp:include>
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
@@ -665,7 +583,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">主菜单</li>
         <li class="active treeview">
-          <a href="index.html">
+          <a href="admin.jsp">
             <i class="fa fa-dashboard"></i> <span>当前信息</span>
           </a>
         </li>

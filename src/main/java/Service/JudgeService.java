@@ -1,12 +1,17 @@
 package Service;
 
+import dao.AdminDao;
+import dao.JudgerDao;
 import dao.PlayerDao;
 import dao.ScoreDao;
 import factory.DaoFactory;
 import net.sf.json.JSONObject;
 import org.apache.commons.beanutils.BeanUtils;
+import po.AdminPo;
+import po.JudgerPo;
 import po.PlayerPo;
 import po.ScorePo;
+import vo.JudgerVo;
 import vo.ScoreVo;
 
 import java.lang.reflect.InvocationTargetException;
@@ -40,6 +45,32 @@ public class JudgeService
         return true;
     }
 
+    /**
+     * 是总裁判
+     * @return
+     */
+    public boolean IsFirstJudger(JudgerVo vo)
+    {
+        return true;
+    }
+
+    /**
+     * 是裁判
+     * @return
+     */
+    public boolean IsJudger(JudgerVo vo)
+    {
+        JudgerDao judgerDao= DaoFactory.getJudgerDao();
+        JudgerPo judgerPo = judgerDao.findById(vo.getId());
+
+        if (judgerPo == null || !judgerPo.getPassword().equals(vo.getPassword()))
+        {
+            return false;
+        } else
+        {
+            return true;
+        }
+    }
 
     /**
      * 取得个人单项的所有分数

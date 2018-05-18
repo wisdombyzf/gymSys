@@ -29,7 +29,6 @@
         <datasource-map>
           <unit-entry name="a.xml" value="74321e37-ae74-4a97-8330-066351d2dfd2" />
           <unit-entry name="hibernate.cfg.xml" value="74321e37-ae74-4a97-8330-066351d2dfd2" />
-          <unit-entry name="sessionFactory" />
         </datasource-map>
         <naming-strategy-map>
           <unit-entry name="hibernate.cfg.xml" />
@@ -118,5 +117,7 @@
     <orderEntry type="library" name="Maven: asm:asm:3.3" level="project" />
     <orderEntry type="library" name="Maven: asm:asm-commons:3.3" level="project" />
     <orderEntry type="library" name="Maven: asm:asm-tree:3.3" level="project" />
+    <orderEntry type="library" name="Maven: org.java-websocket:Java-WebSocket:1.3.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.tomcat:tomcat-websocket-api:8.5.15" level="project" />
   </component>
 </module>

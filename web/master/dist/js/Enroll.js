@@ -241,6 +241,7 @@ function putmessage() {
         }
     }
 }
+
 //相应的删除操作
 function delmessage() {
     var i = playerCnt;
