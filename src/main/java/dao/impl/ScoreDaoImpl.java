@@ -1,10 +1,12 @@
 package dao.impl;
 
 import dao.ScoreDao;
+import org.springframework.stereotype.Repository;
 import po.ScorePo;
 
 import java.util.List;
 
+@Repository("ScoreDao")
 public class ScoreDaoImpl extends BaseDaoImpl<ScorePo> implements ScoreDao
 {
     /**

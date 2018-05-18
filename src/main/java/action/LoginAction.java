@@ -7,17 +7,21 @@ import com.opensymphony.xwork2.ActionSupport;
 import jdk.nashorn.internal.objects.NativeNumber;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import util.SpringBeanFactory;
 import vo.AdminVo;
 import vo.JudgerVo;
 import vo.TeamVo;
 
 import javax.servlet.http.HttpSession;
+import javax.swing.*;
 
 //TODO 密码还是明文传输
 
 /**
  *  登陆相关
  */
+@Controller
 public class LoginAction extends BaseAction
 {
 
@@ -25,6 +29,14 @@ public class LoginAction extends BaseAction
     private String password;
 
 
+    @Autowired
+    AdminService adminService;
+
+    @Autowired
+    TeamService teamService;
+
+    @Autowired
+    JudgeService judgeService;
 
 
     /**
@@ -33,7 +45,6 @@ public class LoginAction extends BaseAction
      */
     public String loginAdamin()
     {
-        AdminService adminService=new AdminService();
         AdminVo vo=new AdminVo();
         vo.setId(username);
         vo.setPassword(password);
@@ -56,7 +67,6 @@ public class LoginAction extends BaseAction
      */
     public String loginNomal()
     {
-        TeamService teamService=new TeamService();
         TeamVo vo=new TeamVo();
         vo.setTeamAccount(username);
         vo.setPassword(password);
@@ -80,11 +90,10 @@ public class LoginAction extends BaseAction
      */
     public String loginJudger() throws Exception
     {
-        JudgeService service=new JudgeService();
         JudgerVo vo=new JudgerVo();
         vo.setJudgeAccount(username);
         vo.setPassword(password);
-        if (service.IsJudger(vo))
+        if (judgeService.IsJudger(vo))
         {
             HttpSession session=getSession();
             session.setAttribute("judger",vo);

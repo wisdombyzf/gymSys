@@ -1,10 +1,13 @@
 package dao.impl;
 
 import dao.JudgerDao;
+import org.springframework.stereotype.Repository;
 import po.JudgerPo;
 
 import java.util.List;
 
+
+@Repository("JudgerDao")
 public class JudgerDaoImpl extends BaseDaoImpl<JudgerPo> implements JudgerDao
 {
 

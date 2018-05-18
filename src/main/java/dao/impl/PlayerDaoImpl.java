@@ -1,11 +1,12 @@
 package dao.impl;
 
 import dao.PlayerDao;
+import org.springframework.stereotype.Repository;
 import po.PlayerPo;
 
 import java.util.List;
 
-
+@Repository("PlayerDao")
 public class PlayerDaoImpl extends BaseDaoImpl<PlayerPo> implements PlayerDao
 {
 

@@ -5,6 +5,7 @@
          version="3.1">
 
     <!-- 添加对spring的支持 -->
+
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>classpath:application.xml</param-value>
@@ -14,6 +15,8 @@
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
+
+
 
 
     <!-- 添加对struts2的支持 -->

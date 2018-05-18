@@ -1,20 +1,15 @@
 package Service;
 
-import dao.AdminDao;
-import dao.RulesDao;
-import dao.TeamDao;
+import dao.*;
 import factory.DaoFactory;
 import org.apache.commons.beanutils.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import po.AdminPo;
-import po.RulesPo;
-import po.TeamPo;
-import vo.AdminVo;
-import vo.RulesVo;
-import vo.TeamVo;
+import po.*;
+import vo.*;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -29,6 +24,9 @@ public class AdminService
     TeamDao teamDao;
     @Autowired
     AdminDao adminDao;
+    @Autowired
+    RulesDao rulesDao;
+
     public AdminService()
     {
     }
@@ -42,7 +40,6 @@ public class AdminService
      */
     public boolean IsLogin(AdminVo vo)
     {
-        AdminDao adminDao= DaoFactory.getAdminDao();
         AdminPo adminPo = adminDao.findById(vo.getId());
         if (adminPo == null || !adminPo.getPassword().equals(vo.getPassword()))
         {
@@ -135,5 +132,36 @@ public class AdminService
         }
         return vo;
     }
+
+
+
+    /**
+     * 获取所有比赛
+     * @return
+     */
+    public List<MatchVo> getAllMatchList()
+    {
+        MatchDao dao = DaoFactory.getMatchDao();
+        List<MatchPo> pos=dao.getAllMatchList();
+        List<MatchVo> vos=new ArrayList<MatchVo>();
+        for (MatchPo po:pos)
+        {
+            try
+            {
+                MatchVo vo=new MatchVo();
+                BeanUtils.copyProperties(vo,po);
+                vos.add(vo);
+            } catch (IllegalAccessException e)
+            {
+                e.printStackTrace();
+            } catch (InvocationTargetException e)
+            {
+                e.printStackTrace();
+            }
+        }
+        return vos;
+    }
+
+
 
 }

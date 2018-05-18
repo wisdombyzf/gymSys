@@ -2,10 +2,13 @@ package action;
 
 import Service.AdminService;
 import Service.PlayerService;
+import org.springframework.stereotype.Controller;
+import util.SpringBeanFactory;
 import vo.AdminVo;
 import vo.RulesVo;
 import vo.TeamVo;
 
+@Controller
 public class AdminAction extends BaseAction
 {
     private String username;
@@ -19,24 +22,6 @@ public class AdminAction extends BaseAction
     private Integer playerPerMatch;
     private Integer playerCountInGroupScore;
 
-    /**
-     * 登陆
-     * @return
-     */
-    public String login()
-    {
-        AdminService service= new AdminService();
-        AdminVo vo=new AdminVo();
-        vo.setId(username);
-        vo.setPassword(password);
-        if (service.IsLogin(vo))
-        {
-            return "success";
-        }else
-        {
-            return "fail";
-        }
-    }
 
     /**
      * 添加比赛队伍信息

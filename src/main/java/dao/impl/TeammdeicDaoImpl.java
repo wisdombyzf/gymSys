@@ -1,10 +1,12 @@
 package dao.impl;
 
 import dao.TeammdeicDao;
+import org.springframework.stereotype.Repository;
 import po.TeammdeicPo;
 
 import java.util.List;
 
+@Repository("TeammdeicDao")
 public class TeammdeicDaoImpl extends BaseDaoImpl<TeammdeicPo> implements TeammdeicDao
 {
     /**

@@ -7,6 +7,7 @@ import dao.ScoreDao;
 import factory.DaoFactory;
 import net.sf.json.JSONObject;
 import org.apache.commons.beanutils.BeanUtils;
+import org.springframework.stereotype.Service;
 import po.AdminPo;
 import po.JudgerPo;
 import po.PlayerPo;
@@ -18,7 +19,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Service
 public class JudgeService
 {
     /**

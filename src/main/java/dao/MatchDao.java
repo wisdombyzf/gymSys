@@ -1,6 +1,5 @@
 package dao;
 
-import po.JudgerPo;
 import po.MatchPo;
 
 import java.util.List;
@@ -11,7 +10,7 @@ import java.util.List;
 public interface MatchDao extends BaseDao<MatchPo>
 {
     /**
-     * 获取裁判表中的所有记录
+     * 获取比赛表中的所有记录
      * @return
      */
     List<MatchPo> getAllMatchList();

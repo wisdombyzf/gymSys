@@ -5,6 +5,7 @@ import dao.MatchDao;
 import dao.PlayerDao;
 import dao.PlayerMatchDao;
 import factory.DaoFactory;
+import org.springframework.stereotype.Service;
 import po.GamePo;
 import po.MatchPo;
 import po.PlayerMatchPo;
@@ -17,6 +18,8 @@ import java.util.*;
 /**
  * 运动员服务类
  */
+@Service
+
 public class PlayerService
 {
     private PlayerDao playerDao;

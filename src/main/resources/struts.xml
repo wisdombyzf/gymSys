@@ -91,6 +91,12 @@
             <result name="fail">/fail.jsp</result>
         </action>
 
+        <!-- 获取比赛表 -->
+        <action name= "get_match" class="action.GetJSON" method="getAllMatch">
+            <result name="fail">/fail.jsp</result>
+        </action>
+
+
         <!-- websocket 连接 -->
     <action name="admin_lo*" class="action.AdminAction" method="login">
     <result name="fail">/fail.jsp</result>

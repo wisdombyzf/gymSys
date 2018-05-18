@@ -170,4 +170,27 @@ public class GetJSON extends BaseAction
         return "fail";
     }
 
+
+    /**
+     * 比赛表
+     * @return
+     * @throws IOException
+     */
+    public String getAllMatch() throws IOException
+    {
+        PrintWriter out=ini();
+        AdminService service=new AdminService();
+        List<MatchVo> vos =service.getAllMatchList();
+        JSONArray jsonArray=new JSONArray();
+        for (MatchVo vo:vos)
+        {
+            jsonArray.add(vo);
+        }
+        out.print(jsonArray);
+        out.flush();
+        out.close();
+        return "fail";
+    }
+
+
 }

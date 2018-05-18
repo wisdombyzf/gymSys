@@ -35,7 +35,6 @@ public class BaseDaoImpl<T> implements BaseDao<T>
         ParameterizedType type = (ParameterizedType) this.getClass().getGenericSuperclass();
         clazz = (Class<T>) type.getActualTypeArguments()[0];
         //System.out.println("DAO的真实实现类是："+this.clazz.getName());
-        //TODO 是不是应该自己建一个静态的hibernateFactory类？
         config = new Configuration().configure();
         sessionFactory = config.buildSessionFactory();
     }

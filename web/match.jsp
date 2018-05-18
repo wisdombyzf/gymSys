@@ -328,7 +328,7 @@
     });
 
     $('#match').bootstrapTable({
-      url: "http://"+window.location.hostname+"/GameAdmin/GetJSON?Table=Match",
+      url: "http://"+window.location.hostname+":8080/get_match",
       clickEdit: true,
       pagination:true,
       search:true,
@@ -345,46 +345,47 @@
           checkbox:true,
       }, 
         {
-          field: 'pk',
+          field: 'matchId',
           title: '比赛号'
       }, {
-          field: 'fields.Group',
+          field: 'playerGroup',
           title: '比赛年龄组',
           sortable: true
       }, {
-          field: 'fields.Event',
+          field: 'event',
           title: '项目',
           sortable: true
       }, {
-          field: 'fields.ChiefID',
+          field: 'chiefId',
           title: '主裁判身份证',
           sortable: true,
           editable:"input"
       }, {
-          field: 'fields.StartTime',
+          field: 'satrtTime',
           title: '预期开始时间',
           sortable: true,
           editable:"input"
       }, {
-          field: 'fields.EndTime',
+          field: 'endTime',
           title: '预期结束时间',
           sortable: true,
           editable:"input"
       }, {
-          field: 'fields.MatchType',
+          field: 'matchType',
           title: '比赛类型',
           sortable: true
       }, {
-          field: 'fields.MatchStatus',
+          field: 'matchStatus',
           title: '比赛状态'
       },{
-          field: 'fields.SubGroup',
+          field: 'subGroup',
           title: '子组'
       }],
       responseHandler: function (res) {
           return res;
       }
     });
+
     $('#score').bootstrapTable({
       url: "http://"+window.location.hostname+"/GameAdmin/GetJSON?Table=Score&MatchID=1",
       clickEdit: true,
